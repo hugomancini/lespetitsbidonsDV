@@ -4128,6 +4128,7 @@
     "enable_shopify_review_comments": true,
     "enable_shopify_collection_badges": false,
     "quick_shop_enabled": true,
+    "quick_shop_style": "popup",
     "show_payment_button": false,
     "quick_shop_display_vendor": false,
     "quick_shop_display_savings": true,
@@ -4178,12 +4179,12 @@
     "newsletter_popup_seconds": 2,
     "newsletter_popup_days": "30",
     "twitter_link": "",
-    "facebook_link": "",
+    "facebook_link": "https:\/\/www.facebook.com\/lespetitsbidons.fr\/",
     "youtube_link": "",
     "vimeo_link": "",
     "pinterest_link": "",
     "tumblr_link": "",
-    "instagram_link": "",
+    "instagram_link": "https:\/\/www.instagram.com\/lespetitsbidons\/?hl=fr",
     "snapchat_link": "",
     "houzz_link": "",
     "linkedin_link": "",
@@ -4424,17 +4425,17 @@
           "phone_number": "",
           "top_bar_menu": "",
           "show_cart": true,
-          "cart_icon": "cart",
+          "cart_icon": "bag",
           "logo_display_width": 205,
           "logo": "",
           "logo_home": "",
           "logo_mobile": "",
           "main_linklist": "main-menu",
-          "main_linklist2": "footer",
+          "main_linklist2": "accound",
           "vertical_menu": false,
-          "search_enabled": true,
+          "search_enabled": false,
           "fixed_header": true,
-          "logo_position": "center",
+          "logo_position": "left",
           "logo_alignment": "center",
           "menu_position": "inline",
           "menu_alignment": "align_left",
@@ -4463,184 +4464,31 @@
           "footer-2": {
             "type": "link_list",
             "settings": {
-              "menu": "",
+              "menu": "main-menu",
               "social_icons_footer": false
             }
           },
-          "footer-3": {
-            "type": "text",
+          "1571064995074": {
+            "type": "newsletter",
             "settings": {
-              "title": "Title",
-              "content": "<p>Use this text to share information about your brand with your customers.<\/p>",
-              "social_icons_footer": true
+              "title": "Inscrivez-vous pour recevoir nos petites news",
+              "newsletter_text": "",
+              "show_firstname": false,
+              "show_lastname": false,
+              "show_social": true
             }
           }
         },
         "block_order": [
           "footer-0",
-          "footer-1",
           "footer-2",
-          "footer-3"
+          "footer-1",
+          "1571064995074"
         ],
         "settings": {
           "copyright_text": "",
-          "display_designed_by": false,
+          "display_designed_by": true,
           "display_payment_methods": true
-        }
-      },
-      "1489283389016": {
-        "type": "image-with-text-overlay",
-        "settings": {
-          "wide_display": true,
-          "image": "",
-          "pretext": "<p>Introducing the<\/p>",
-          "title": "Turbo Shopify Theme",
-          "subtitle": "<p>From Out of the Sandbox<\/p>",
-          "caption_background": false,
-          "caption_background_transparency": false,
-          "button1": "",
-          "button1_link": "",
-          "button1_highlight": false,
-          "button2": "",
-          "button2_link": "",
-          "button2_highlight": false,
-          "text_position": "center",
-          "text_align": "center"
-        }
-      },
-      "1489283660007": {
-        "type": "featured-text",
-        "settings": {
-          "image": "",
-          "title": "Talk about your brand",
-          "content": "<p>Use this text to share information about your brand with your customers.<\/p>\r\n<p>Describe a product, share announcements, or welcome customers to your store.<\/p>",
-          "button_label": "",
-          "button_link": "",
-          "text_size": "featured_text",
-          "text_alignment": "center"
-        }
-      },
-      "1489283737905": {
-        "type": "featured-promotions",
-        "blocks": {
-          "1489283737905-0": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "link": "",
-              "title": "Feature",
-              "text": "<p>Promotion description details.<\/p>",
-              "button_label": ""
-            }
-          },
-          "1489283737905-1": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "link": "",
-              "title": "Feature",
-              "text": "<p>Promotion description details.<\/p>",
-              "button_label": ""
-            }
-          },
-          "1489283737905-2": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "link": "",
-              "title": "Feature",
-              "text": "<p>Promotion description details.<\/p>",
-              "button_label": ""
-            }
-          },
-          "1489283758712": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "link": "",
-              "title": "Feature",
-              "text": "<p>Promotion description details.<\/p>",
-              "button_label": ""
-            }
-          }
-        },
-        "block_order": [
-          "1489283737905-0",
-          "1489283737905-1",
-          "1489283737905-2",
-          "1489283758712"
-        ],
-        "settings": {
-          "featured_promos_grid": false,
-          "promo_text_on_image_enabled": true,
-          "featured_promos_per_row": 4,
-          "featured_links_animation": "fadeInDown",
-          "feature_style": "square"
-        }
-      },
-      "1489283919239": {
-        "type": "featured-collection",
-        "settings": {
-          "title": "Featured collection",
-          "collection_description": true,
-          "collection": "",
-          "collection_style": "slider",
-          "products_per": 4,
-          "products_limit": 24
-        }
-      },
-      "1489284011497": {
-        "type": "slideshow",
-        "blocks": {
-          "1489284011497-0": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "pretext": "",
-              "title": "Turbo Shopify Theme",
-              "subtitle": "",
-              "caption_background": false,
-              "caption_background_transparency": false,
-              "button1": "Primary Button",
-              "button1_link": "",
-              "button1_highlight": true,
-              "button2": "Secondary Button",
-              "button2_link": "",
-              "button2_highlight": false,
-              "text_position": "center",
-              "text_align": "center"
-            }
-          },
-          "1489284011497-1": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "pretext": "<p>Short text that precedes the headline<\/p>",
-              "title": "Your headline here",
-              "subtitle": "<p>This is a short subheading for your slideshow image<\/p>",
-              "caption_background": false,
-              "caption_background_transparency": false,
-              "button1": "",
-              "button1_link": "",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_link": "",
-              "button2_highlight": false,
-              "text_position": "center",
-              "text_align": "center"
-            }
-          }
-        },
-        "block_order": [
-          "1489284011497-0",
-          "1489284011497-1"
-        ],
-        "settings": {
-          "wide_display": true,
-          "slideshow_text_animation": "fadeInDown",
-          "slideshow_animation": "slide",
-          "slideshow_speed": 6,
-          "activate_adaptiveHeight": false
         }
       },
       "1489284503681": {
@@ -4649,256 +4497,25 @@
           "1489284503681-0": {
             "type": "image",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/imgwtext1.png",
               "image_crop": "none",
-              "title": "Your headline",
-              "text": "<p>Promotion description appears here.<\/p>",
-              "button_label": "View all",
+              "title": "Nos engagements",
+              "text": "<p>Chassez le naturel, il revient au galop !<\/p>\n<p>C&rsquo;est en s&rsquo;inspirant de la nature que nous formulons nos produits. Les lessives LES PETITS BIDONS contiennent 99,6% d&rsquo;ingr&eacute;dients naturels pour &ecirc;tre exact : un record de recherche et de d&eacute;veloppement pour m&ecirc;ler efficacit&eacute; et nature, atteint apr&egrave;s 8 mois d&rsquo;essais et pas moins de 30 recettes.Savon de Marseille, huiles v&eacute;g&eacute;tales, parfums naturels, nous avons s&eacute;lectionn&eacute; chaque composant pour leur naturalit&eacute;, leur efficacit&eacute; et leur innocuit&eacute; pour la peau et l&rsquo;environnement.<\/p>",
+              "button_label": "Découvrir nos engagements",
               "link": "",
-              "bg_color": "",
-              "text_color": ""
-            }
-          },
-          "1489284503681-1": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "image_crop": "none",
-              "title": "Your headline",
-              "text": "<p>Promotion description appears here.<\/p>",
-              "button_label": "View all",
-              "link": "",
-              "bg_color": "",
+              "bg_color": "#ffffff",
               "text_color": ""
             }
           }
         },
         "block_order": [
-          "1489284503681-0",
-          "1489284503681-1"
+          "1489284503681-0"
         ],
         "settings": {
           "frontpage_grid_style": false,
           "featured_links_per_row": "1",
           "frontpage_text_align": "left",
           "frontpage_image_position": "left"
-        }
-      },
-      "1489284533457": {
-        "type": "image-with-text-overlay",
-        "settings": {
-          "wide_display": true,
-          "image": "",
-          "pretext": "",
-          "title": "Your Headline",
-          "subtitle": "",
-          "caption_background": false,
-          "caption_background_transparency": false,
-          "button1": "",
-          "button1_link": "",
-          "button1_highlight": false,
-          "button2": "",
-          "button2_link": "",
-          "button2_highlight": false,
-          "text_position": "center",
-          "text_align": "center"
-        }
-      },
-      "1489285116594": {
-        "type": "collection-list",
-        "blocks": {
-          "1489285116594-0": {
-            "type": "collection",
-            "settings": {
-              "feature_collection": "",
-              "image": ""
-            }
-          },
-          "1489285116594-1": {
-            "type": "collection",
-            "settings": {
-              "feature_collection": "",
-              "image": ""
-            }
-          },
-          "1489285116594-2": {
-            "type": "collection",
-            "settings": {
-              "feature_collection": "",
-              "image": ""
-            }
-          },
-          "1489285780844": {
-            "type": "collection",
-            "settings": {
-              "feature_collection": "",
-              "image": ""
-            }
-          },
-          "1489285785375": {
-            "type": "collection",
-            "settings": {
-              "feature_collection": "",
-              "image": ""
-            }
-          },
-          "1489285787858": {
-            "type": "collection",
-            "settings": {
-              "feature_collection": "",
-              "image": ""
-            }
-          }
-        },
-        "block_order": [
-          "1489285116594-0",
-          "1489285116594-1",
-          "1489285116594-2",
-          "1489285780844",
-          "1489285785375",
-          "1489285787858"
-        ],
-        "settings": {
-          "title": "Collection list",
-          "align_height": false,
-          "collection_height": 200,
-          "frontpage_collections_per_row": 3
-        }
-      },
-      "1489285174583": {
-        "type": "featured-products",
-        "blocks": {
-          "1489285174583-0": {
-            "type": "product",
-            "settings": {
-              "featured_product": ""
-            }
-          },
-          "1489285174583-1": {
-            "type": "product",
-            "settings": {
-              "featured_product": ""
-            }
-          }
-        },
-        "block_order": [
-          "1489285174583-0",
-          "1489285174583-1"
-        ],
-        "settings": {
-          "wide_display": true,
-          "frontpage_product_stagger": true,
-          "activate_autoplay": false,
-          "enable_product_lightbox": true,
-          "gallery_arrows": true,
-          "activate_zoom": false,
-          "slideshow_animation": "slide",
-          "display_vendor": false,
-          "enable_shopify_product_badges": false,
-          "display_savings": true,
-          "frontpage_display_description": true,
-          "product_description_position": "top",
-          "show_payment_button": false
-        }
-      },
-      "1489285367207": {
-        "type": "newsletter",
-        "settings": {
-          "wide_display": true,
-          "display_first_name": false,
-          "display_last_name": false,
-          "newsletter_title": "Subscribe",
-          "newsletter_text": "<p>Sign up to get the latest on sales, new releases and more &hellip;<\/p>",
-          "newsletter_section_text_align": "center",
-          "image": ""
-        }
-      },
-      "1489285418400": {
-        "type": "featured-blog",
-        "settings": {
-          "title": "Blog posts",
-          "blog_widget_select": "",
-          "home_page_articles": 3,
-          "blog_tags": false,
-          "blog_author": false,
-          "read_time": true,
-          "blog_date": true,
-          "blog_comment_count": true,
-          "read_more_link": true
-        }
-      },
-      "1489285451288": {
-        "type": "social-feeds",
-        "blocks": {
-          "1489285451288-1": {
-            "type": "instagram",
-            "settings": {
-              "instagram_client_id": "",
-              "instagram_title": "Instagram",
-              "instagram_count": 4
-            }
-          }
-        },
-        "block_order": [
-          "1489285451288-1"
-        ],
-        "settings": {}
-      },
-      "1489285524898": {
-        "type": "testimonial",
-        "blocks": {
-          "1489285524898-0": {
-            "type": "image",
-            "settings": {
-              "title": "Customer Testimonial",
-              "testimonial": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quam enim, fringilla ut purus ut, pretium ullamcorper sem. In sit amet vestibulum tellus. Aenean gravida dolor eget mi bibendum semper. <\/p>",
-              "name": "",
-              "store_name": "",
-              "link": "",
-              "text_position": "center",
-              "text_align": "center",
-              "image": "",
-              "darken_bg": false
-            }
-          },
-          "1489285524898-1": {
-            "type": "image",
-            "settings": {
-              "title": "Customer Testimonial",
-              "testimonial": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quam enim, fringilla ut purus ut, pretium ullamcorper sem. In sit amet vestibulum tellus. Aenean gravida dolor eget mi bibendum semper. <\/p>",
-              "name": "",
-              "store_name": "",
-              "link": "",
-              "text_position": "center",
-              "text_align": "center",
-              "image": "",
-              "darken_bg": false
-            }
-          },
-          "1489285524898-2": {
-            "type": "image",
-            "settings": {
-              "title": "Customer Testimonial",
-              "testimonial": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quam enim, fringilla ut purus ut, pretium ullamcorper sem. In sit amet vestibulum tellus. Aenean gravida dolor eget mi bibendum semper. <\/p>",
-              "name": "",
-              "store_name": "",
-              "link": "",
-              "text_position": "center",
-              "text_align": "center",
-              "image": "",
-              "darken_bg": false
-            }
-          }
-        },
-        "block_order": [
-          "1489285524898-0",
-          "1489285524898-1",
-          "1489285524898-2"
-        ],
-        "settings": {
-          "wide_display": true,
-          "testimonial_text_animation": "fadeInDown",
-          "testimonial_speed": 6
         }
       },
       "collection-template": {
@@ -4908,7 +4525,7 @@
           "collection_breadcrumb": true,
           "collection_tags": false,
           "collection_sort": false,
-          "image": "shopify:\/\/shop_images\/shopify_UX_design_experience_utilisateur_optimisee-800.jpg",
+          "image": "",
           "featured_collection_image": false,
           "image_darken": false,
           "products_per_row": 3,
@@ -5092,50 +4709,201 @@
           "toggle": false
         }
       },
-      "1559133995644": {
-        "type": "video",
+      "1489284011497": {
+        "type": "slideshow",
+        "blocks": {
+          "1489284011497-0": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "pretext": "",
+              "title": "Lessives efficaces et engagées",
+              "subtitle": "",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Je teste les petits bidons 12,99€",
+              "button1_link": "",
+              "button1_highlight": true,
+              "button2": "Je m'abonne à partir de 11,90€",
+              "button2_link": "",
+              "button2_highlight": false,
+              "text_position": "left",
+              "text_align": "left"
+            }
+          }
+        },
+        "block_order": [
+          "1489284011497-0"
+        ],
         "settings": {
           "wide_display": true,
-          "aspect_ratio": "16:9",
-          "autoplay": true,
-          "autoloop": true,
-          "video_dark_overlay": false,
-          "video": "https:\/\/youtu.be\/BTFD72LTgUg",
-          "mp4": "",
-          "ogv": "",
+          "slideshow_text_animation": "fadeInDown",
+          "slideshow_animation": "slide",
+          "slideshow_speed": 6,
+          "activate_adaptiveHeight": false
+        }
+      },
+      "1571063917959": {
+        "type": "testimonial",
+        "blocks": {
+          "1571063917959-0": {
+            "type": "image",
+            "settings": {
+              "title": "Témoignages",
+              "testimonial": "<p>Au d&eacute;but il faut s&rsquo;habituer au dosage mais apr&egrave;s c&rsquo;est hyper simple ! Les taches sont parties sur le linge tach&eacute; et on sent bien l&rsquo;odeur du parfum &agrave; l&rsquo;ouverture du tambour ! J&rsquo;en suis bien satisfaite !<\/p>",
+              "name": "Client 1",
+              "store_name": "",
+              "link": "",
+              "text_position": "center",
+              "text_align": "center",
+              "image": "",
+              "darken_bg": false
+            }
+          },
+          "1571063917959-1": {
+            "type": "image",
+            "settings": {
+              "title": "Customer Testimonial",
+              "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+              "name": "",
+              "store_name": "",
+              "link": "",
+              "text_position": "center",
+              "text_align": "center",
+              "image": "",
+              "darken_bg": false
+            }
+          },
+          "1571063917959-2": {
+            "type": "image",
+            "settings": {
+              "title": "Customer Testimonial",
+              "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+              "name": "",
+              "store_name": "",
+              "link": "",
+              "text_position": "center",
+              "text_align": "center",
+              "image": "",
+              "darken_bg": false
+            }
+          }
+        },
+        "block_order": [
+          "1571063917959-0",
+          "1571063917959-1",
+          "1571063917959-2"
+        ],
+        "settings": {
+          "wide_display": false,
+          "testimonial_text_animation": "fadeInDown",
+          "testimonial_speed": 6
+        }
+      },
+      "1571064040930": {
+        "type": "image-with-text-overlay",
+        "settings": {
+          "wide_display": true,
           "image": "",
-          "display_text_over_video": false,
           "pretext": "",
-          "title": "",
-          "subtitle": "",
+          "title": "Ensemble, lavons sans tout salir",
+          "subtitle": "<p>Azurants optiques, EDTA, BHT, tensioactifs d&eacute;riv&eacute;s de p&eacute;trole, sulfates, huile de palme&hellip;. Des produits toujours plus chimiques, des ingr&eacute;dients de synth&egrave;se cach&eacute;s et toxiques, desformules fabriqu&eacute;s loin de chez nous, <br>un impact environnemental d&eacute;sastreux&hellip; <br>Alors chez Les Petits Bidons, on en a eu marre et on a voulu repartir de z&eacute;ro pour tenter de r&eacute;pondre &agrave; cette simple question&nbsp;:\u000bet si, plut&ocirc;t que de faire toujours plus, <br>on essayait de faire mieux&nbsp;?<\/p>",
           "caption_background": false,
           "caption_background_transparency": false,
-          "button1_label": "Play Video",
+          "button1": "",
           "button1_link": "",
           "button1_highlight": false,
-          "button2_label": "",
+          "button2": "",
           "button2_link": "",
           "button2_highlight": false,
-          "text_position": "center",
-          "text_align": "center"
+          "text_position": "left",
+          "text_align": "left"
+        }
+      },
+      "1571064405470": {
+        "type": "logo-bar",
+        "blocks": {
+          "1571064405470-0": {
+            "type": "logo_image",
+            "settings": {
+              "image": "",
+              "link": ""
+            }
+          },
+          "1571064405470-1": {
+            "type": "logo_image",
+            "settings": {
+              "image": "",
+              "link": ""
+            }
+          },
+          "1571064405470-2": {
+            "type": "logo_image",
+            "settings": {
+              "image": "",
+              "link": ""
+            }
+          },
+          "1571064405470-3": {
+            "type": "logo_image",
+            "settings": {
+              "image": "",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1571064405470-0",
+          "1571064405470-1",
+          "1571064405470-2",
+          "1571064405470-3"
+        ],
+        "settings": {
+          "title": "Ils parlent de nous !"
+        }
+      },
+      "1571064476931": {
+        "type": "logo-bar",
+        "blocks": {
+          "1571064476931-0": {
+            "type": "logo_image",
+            "settings": {
+              "image": "",
+              "link": ""
+            }
+          },
+          "1571064476931-1": {
+            "type": "logo_image",
+            "settings": {
+              "image": "",
+              "link": ""
+            }
+          },
+          "1571064476931-2": {
+            "type": "logo_image",
+            "settings": {
+              "image": "",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1571064476931-0",
+          "1571064476931-1",
+          "1571064476931-2"
+        ],
+        "settings": {
+          "title": "value proposition"
         }
       }
     },
     "content_for_index": [
-      "1489283389016",
-      "1489283660007",
-      "1489283737905",
-      "1489283919239",
       "1489284011497",
       "1489284503681",
-      "1489284533457",
-      "1489285116594",
-      "1489285524898",
-      "1489285174583",
-      "1489285367207",
-      "1489285418400",
-      "1489285451288",
-      "1559133995644"
+      "1571064040930",
+      "1571063917959",
+      "1571064405470",
+      "1571064476931"
     ]
   }
 }

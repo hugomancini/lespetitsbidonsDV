@@ -88,6 +88,12 @@
       },
       {
         "type": "color",
+        "id": "main_color",
+        "label": "Couleur Principale",
+        "default": "#0FBEB2"
+      },
+      {
+        "type": "color",
         "id": "regular_color",
         "label": "Regular text",
         "default": "#333333"

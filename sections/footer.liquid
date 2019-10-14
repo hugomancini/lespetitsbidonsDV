@@ -5,7 +5,7 @@
 {% endcomment %}
 
 <footer class="footer">
-  <div class="container footer-menu-wrap">
+  <div class="container footer-menu-wrap custom-container">
       {% for block in section.blocks %}
         <div class="{% if forloop.length >= 5 %}one-fifth column{% elsif forloop.length == 4 %}one-fourth column{% elsif forloop.length == 3 %}one-third column{% elsif forloop.length == 2 %}one-half column{% endif %} medium-down--one-whole" {{ block.shopify_attributes }}>
           {% if block.type == 'logo' %}
@@ -24,13 +24,17 @@
                                     {{ block.settings.image | img_url: '1000x' }} 1000w"
                    />
               {% else %}
-                <div class="logo">{{ shop.name }}</div>
+                <div class="logo"><img src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/logo.svg?78" alt=""></div>
               {% endif %}
             </div>
 
           {% elsif block.type == 'newsletter' %}
 
           <div class="newsletter_section">
+
+            {% if block.settings.show_social %}
+              {% include 'social-icons' %}
+            {% endif %}
 
             {% if block.settings.title != blank %}
               <h6>{{ block.settings.title }}</h6>
@@ -76,10 +80,10 @@
                 {% endform %}
               {% endif %}
             </div>
-            {% if block.settings.show_social %}
-              {% include 'social-icons' %}
-            {% endif %}
           </div>
+
+         {% comment %} SEE THIS BLOCK RIGHT HERE AND TRY TO MAKE A IF STATEMENT TO SEPARATE FIRST
+          AND SECOND FOOTERMENUS{% endcomment %}
 
           {% elsif block.type == 'link_list' %}
             <div class="footer_menu">
