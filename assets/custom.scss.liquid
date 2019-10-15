@@ -2,39 +2,241 @@
 
 $main-color: {{ settings.main_color }};
 
+/*FONTS*/
+
+@font-face {
+    font-family: 'moam91regular';
+    src: url('moam91-webfont.woff2') format('woff2'),
+         url('moam91-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'moam91regular';
+}
+
 
 /*GENERAL STYLES*/
 
-.custom-container {
-  width:1000px;
-  margin:0 auto;
+@media (min-width: 860px) {
+  .custom-container {
+    width:1000px;
+    margin:0 auto;
 
+  }
+
+  .no-show {
+    display: none;
+  }
 }
 
 
 /*FOOTER*/
 
-.footer {
-  background-color: $main-color;
+@media (min-width: 860px) {
+
+
+  .footer {
+    background-color: $main-color;
+
+    a {
+   color:white !important;
+   font-weight: bold !important;
+    }
+
+    p {
+     color:white !important;
+     font-weight: bold !important;
+
+    }
+    h5 {
+     color:white !important;
+     font-weight: bold !important;
+
+    }
+    h6 {
+      display: none;
+    }
+
+    .contact_email {
+      background-color: transparent !important;
+      border: 1px solid #ffffff !important;
+      font-color: white !important;
+    }
+
+    #contact_form .action_button.sign_up {
+      display: none !important;
+    }
+
+    .footer-columns {
+      margin-bottom: 0px !important;
+    }
+
+    #footer-logo {
+      height: 60%;
+      width: 60%;
+      display:flex;
+    }
+
+    .nl-first-block {
+      display:flex;
+      padding: 15px 0 0 0;
+      justify-content: space-between;
+    }
+
+    .nl-title {
+      margin-bottom: -20px;
+    }
+
+    .nl-subtitle {
+      margin-bottom: -20px;
+      font-size: 10px;
+    }
+
+    .newsletter_section {
+      width: 400px;
+
+      p {
+        padding-top: 0px !important;
+      }
+    }
+
+    .social_icons {
+      display: flex !important;
+      flex-direction: column;
+      padding-top: 0px !important;
+      margin-top: 0px !important;
+    }
+
+    .social-block ul, li {
+      margin-bottom: 0px !important;
+
+    }
+
+
+    .one-third {
+      width: calc(33.33333% - 52px);
+    }
+
+    .footer_credits {
+      display: none;
+    }
+
+    .social_icons {
+      a, p {
+        margin-bottom: 5px !important;
+      }
+    }
+
+    #email-input {
+      position: relative;
+      color: white;
+      fill:white;
+      font-color: white;
+    }
+
+    input[type="email"] {
+      color: white;
+      font-weight: bold;
+    }
+
+    input[type="email"]::placeholder {
+      color:white;
+    }
+
+    .email-arrow {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      right: 10px;
+      top: 12px;
+      color: white;
+      fill:white;
+      font-color: white;
+    }
+  }
 }
 
-.footer a {
- color:white !important;
- font-weight: bold !important;
+@media (max-width: 860px) {
+  .footer {
+    background-color: $main-color;
 
+    a {
+   color:white !important;
+   font-weight: bold !important;
+    }
+
+    p {
+     color:white !important;
+     font-weight: bold !important;
+
+    }
+    h5, h6 {
+     color:white !important;
+     font-weight: bold !important;
+
+    }
+
+    #footer-logo {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 8px;
+    }
+
+    .contact_email {
+      background-color: transparent !important;
+      border: 1px solid #ffffff !important;
+      font-color: white !important;
+    }
+
+
+    #email-input {
+      position: relative;
+      color: white;
+      fill:white;
+      font-color: white;
+    }
+
+    .email-arrow {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      right: 10px;
+      top: 12px;
+      color: white;
+      fill:white;
+      font-color: white;
+    }
+
+    .newsletter_section p {
+        padding: 0px 0;
+    }
+
+    .footer_credits {
+      display: none;
+    }
+
+    input[type="email"] {
+      color: white;
+      font-weight: bold;
+    }
+
+    input[type="email"]::placeholder {
+      color:white;
+    }
+
+    #contact_form .action_button.sign_up {
+      display: none !important;
+    }
+  }
 }
 
-.footer h6 {
-  display: none;
-}
 
-.contact_email {
-  background-color: transparent !important;
-  border: 1px solid #ffffff !important;
-  font-color: white !important;
-}
 
-#contact_form .action_button.sign_up {
-  display: none !important;
-}
+
+
+
 
