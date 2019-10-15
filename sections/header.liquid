@@ -66,11 +66,11 @@
     </a>
     <a href="{{ shop.url }}" title="{{ shop.name | escape }}" class="mobile_logo logo">
       {% if section.settings.logo_mobile != nil %}
-        <img src="{{ section.settings.logo_mobile | img_url: '410x' }}" alt="{{ shop.name | escape }}" class="lazyload" />
+        <img src="{{ section.settings.logo_url }}" alt="{{ shop.name | escape }}" class="lazyload" />
       {% elsif section.settings.logo != nil %}
-        <img src="{{ section.settings.logo | img_url: '410x' }}" alt="{{ shop.name | escape }}" />
+        <img src="{{ section.settings.logo_url }}" alt="{{ shop.name | escape }}" />
       {% else %}
-        {{ shop.name }}
+        <img src="{{ section.settings.logo_url }}" alt="{{ shop.name | escape }}" height="30px"/>
       {% endif %}
     </a>
     <div class="top_bar--right">
@@ -344,16 +344,7 @@
       <div class="main_nav clearfix menu-position--{{ section.settings.menu_position }} logo-align--{{ section.settings.logo_position }}">
         {% capture logo %}
           <div class="logo text-align--{{ section.settings.logo_alignment }}">
-            <a href="{{ shop.url }}" title="{{ shop.name }}">
-              {% if section.settings.logo_home != nil %}
-                <img src="{{ section.settings.logo_home | img_url: '410x' }}" class="secondary_logo" alt="{{ shop.name | escape }}" />
-              {% endif %}
-              {% if section.settings.logo != nil %}
-                <img src="{{ section.settings.logo | img_url: '410x' }}" class="primary_logo lazyload" alt="{{ shop.name | escape }}" />
-              {% else %}
-                {{ shop.name }}
-              {% endif %}
-            </a>
+            <img src="{{ section.settings.logo_url }}" alt="">
           </div>
         {% endcapture %}
 
@@ -410,6 +401,9 @@
             </ul>
           </div>
         {% endif %}
+        {% if section.settings.show_cart %}
+
+
         {% if section.settings.search_enabled %}
           <div class="dropdown_container center" data-dropdown="search">
             <div class="dropdown" data-autocomplete-{{ settings.enable_autocomplete }}>
@@ -425,6 +419,25 @@
         {% endif %}
         {% include 'sub-menu' with section.settings.main_linklist %}
         {% include 'sub-menu' with section.settings.main_linklist2 %}
+      <div class="right-side-menu">
+        {% if settings.show_multiple_currencies %}
+          <li>
+            {% include 'currencies-switcher' %}
+          </li>
+        {% endif %}
+        {% if shop.customer_accounts_enabled %}
+          <li>
+            <a href="/account" class="icon-user" title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}"> <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span></a>
+          </li>
+        {% endif %}
+        <div class="separator">
+          <img src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/separator.svg?882" alt="">
+        </div>
+          <div class="cart_container">
+          <a href="/cart" class="{% if section.settings.cart_icon == "cart" %}icon-cart{% else %}icon-bag{% endif %} mini_cart dropdown_link" title="{{ 'layout.general.cart' | t | escape }}" data-no-instant> <span class="cart_count">{{ cart.item_count }}</span></a>
+        </div>
+      {% endif %}
+      </div>
       </div>
     </div>
   </div>
@@ -503,6 +516,12 @@
       "id": "promo_text",
       "label": "Text",
       "info": "Maximum character limit is 170"
+    },
+    {
+      "type": "text",
+      "id": "logo_url",
+      "label": "SVG logo url",
+      "info": "Paste SVG logo url"
     },
     {
      "type": "header",

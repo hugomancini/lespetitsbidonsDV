@@ -234,9 +234,54 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/*HEADER*/
 
 
 
+.main_nav {
+  display: flex;
+  align-items: center;
+}
 
+.separator {
+  height: 63px;
+  width: 2px;
+  margin-top: 8px;
+}
+
+
+@media (min-width: 860px) {
+
+  .right-side-menu {
+    margin-right: 24px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  .right-side-menu {
+    p {
+      font-size: 16px !important;
+    }
+  }
+
+  .cart_container {
+    width: 100px;
+  }
+}
+
+
+@media (max-width: 860px) {
+  #header .top_bar{
+
+    height: 70px;
+
+    img {
+      max-height: 100px !important;
+      height: 55px;
+    }
+
+  }
+}
 
 
