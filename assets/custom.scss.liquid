@@ -250,6 +250,11 @@ body, nav, a, span {
 .main_nav {
   display: flex;
   align-items: center;
+  height: 100px;
+
+  p, a {
+    font-size: 10px !important;
+  }
 }
 
 .nav {
@@ -269,15 +274,18 @@ body, nav, a, span {
 }
 
 .cart_count {
-  margin-bottom:10px;
+  background-color: transparent;
 }
 
 .cart_container {
-
+  a {
+    height: 100% !important;
+    padding-top: 8px;
+  }
 }
 
 .new_cart_icon {
-  height: 40px;
+  height: 30px;
 }
 
 .mini_cart, .nav a.mini_cart {
@@ -285,18 +293,30 @@ body, nav, a, span {
 }
 
 .my-account {
+  margin-right: 30px;
+
   a {
     font-size: 12px;
+  }
+}
+
+#header .mobile_nav.dropdown_link span.menu_title {
+    display: none;
+}
+
+.mobile_nav {
+  div {
+    span {
+      background-color: $main-color;
+    }
   }
 }
 
 @media (min-width: 860px) {
 
   .right-side-menu {
-    padding-right: 12px;
     font-size: 12px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     position: relative;
     width: 280px;
@@ -316,11 +336,23 @@ body, nav, a, span {
 @media (max-width: 860px) {
   #header .top_bar{
 
+    background-color: white;
     height: 70px;
 
     img {
       max-height: 100px !important;
-      height: 55px;
+      height: 40px;
+    }
+
+  }
+
+  .cart_container {
+    a {
+      height: 100% !important;
+      padding-top: 0px !important;
+    }
+    img {
+      height: 30px !important;
     }
 
   }
