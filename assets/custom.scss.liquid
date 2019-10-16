@@ -226,6 +226,10 @@
       }
 
       .newsletter_section{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
         background-color: transparent !important;
         p {
             padding: 0px 0;
@@ -247,9 +251,17 @@
       }
 
       #contact_form .action_button.sign_up {
-        display: none !important;
+          display: none !important;
+        }
       }
-    }
+
+      .title-subtitle {
+        margin-top: 10px;
+
+        p {
+          font-size: 16px;
+        }
+      }
   }
 
 /*HEADER*/

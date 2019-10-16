@@ -312,22 +312,17 @@
           {% elsif block.type == 'link_list' %}
             <div class="footer_menu {% if block.settings.logo_on_list %}logo-block{% endif %}">
               {% if block.settings.menu != blank %}
-                <h6>{{ linklists[block.settings.menu].title }}<span class="right icon-down-arrow"></span></h6>
-                <div class="toggle_content">
+
                   <ul>
                     <li></li>
                     {% for link in linklists[block.settings.menu].links %}
                       <li><p><a href="{{ link.url }}">{{ link.title }}</a></p></li>
                     {% endfor %}
                   </ul>
-                </div>
               {% else %}
-                <h6>Menu title<span class="right icon-down-arrow"></span></h6>
-                <div class="toggle_content">
                   <ul>
                     <li><p>{{ 'homepage.onboarding.no_content' | t }}</p></li>
                   </ul>
-                </div>
               {% endif %}
             </div>
 
