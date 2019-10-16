@@ -6,6 +6,15 @@
 
 
   @font-face {
+      font-family: 'moam91regular';
+      src: url('moam91-webfont.woff2') format('woff2'),
+           url('moam91-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+
+  }
+
+  @font-face {
       font-family: 'Fashion Fetish';
       src: url('FashionFetish.eot');
       src: url('FashionFetish.eot?#iefix') format('embedded-opentype'),
@@ -19,12 +28,19 @@
 
 
   h1, h2, h3, h4, h5, h6 {
-   font-family: 'Fashion Fetish' !important;
+   font-family: 'moam91regular' !important;
   }
 
-  body, nav, a, span {
+  body {
     font-family: 'Fashion Fetish' !important;
   }
+
+  header, footer {
+    a{
+      font-family: 'moam91regular' !important;
+    }
+  }
+
 
 /*GENERAL STYLES*/
 
@@ -42,13 +58,13 @@
 
 /*FOOTER*/
 
-.icon-facebook:before {
-    font-size: 32px;
-}
+  .icon-facebook:before {
+      font-size: 32px;
+  }
 
-.icon-instagram:before {
-    font-size: 32px;
-}
+  .icon-instagram:before {
+      font-size: 32px;
+  }
 
   @media (min-width: 860px) {
 
@@ -114,8 +130,7 @@
       }
 
       .newsletter_section {
-        width: 400px;
-
+        margin-bottom: 100px;
         p {
           padding-top: 0px !important;
         }
@@ -176,11 +191,27 @@
       }
 
       .footer-1 {
-        height: 200px;
+        height: 280px;
+        width:200px;
+        flex-shrink:1;
       }
 
       .footer-2 {
-        height: 200px;
+        height: 280px;
+        width:200px;
+        flex-shrink:1;
+      }
+
+      .footer-3 {
+        flex-grow:1;
+      }
+
+      .footer-columns {
+        align-self: flex-end;
+      }
+
+      .custom-container {
+          display: flex;
       }
     }
   }
