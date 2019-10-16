@@ -94,7 +94,7 @@
                   <div id="email-input">
                     <input type="email" class="contact_email footer-email" name="contact[email]" required placeholder="EMAIL" />
                     <input type='submit' class="action_button sign_up" value="{{ 'general.newsletter_form.submit' | t }}" />
-                    <img class="email-arrow" src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/right-arrow.png?648" alt="">
+                    <img class="email-arrow" src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/arrowright.svg?1286" alt="">
                   </div>
                 {% endform %}
               {% endif %}
@@ -105,18 +105,21 @@
           AND SECOND FOOTERMENUS{% endcomment %}
 
           {% elsif block.type == 'link_list' %}
-            <div class="footer_menu {% if block.settings.logo_on_list %}logo-block{% endif %}">
-              {% if block.settings.menu != blank %}
-                {% if block.settings.logo_on_list %}
-                  <li id="footer-logo"><img src="{{ block.settings.logo-url }}" alt=""></li>
-                {% endif %}
+            <div class="footer_menu {% if block.settings.logo_on_list %}logo-block{% endif %} {% if block.id == '1571230502546' %}footer-2 {% elsif block.id == 'footer-1' %} footer-1 {% endif %} ">
                 <h6>{{ linklists[block.settings.menu].title }}<span class="right icon-down-arrow"></span></h6>
                 <div class="toggle_content">
                   <ul>
-                    <li></li>
+                    {% if block.settings.menu != blank %}
+                      {% if block.settings.logo_on_list %}
+                        <li id="footer-logo"><img src="{{ block.settings.logo-url }}" alt=""></li>
+                      {% endif %}
                     {% for link in linklists[block.settings.menu].links %}
                       <li><p><a href="{{ link.url }}">{{ link.title }}</a></p></li>
                     {% endfor %}
+                      {% if block.id == '1571230502546' %}
+                        <li><p><a href="/account">Mon Compte</a></p></li>
+                      {% endif %}
+
                   </ul>
                 </div>
               {% else %}
@@ -294,7 +297,7 @@
                   <div id="email-input">
                     <input type="email" class="contact_email footer-email" name="contact[email]" required placeholder="EMAIL" />
                     <input type='submit' class="action_button sign_up" value="{{ 'general.newsletter_form.submit' | t }}" />
-                    <img class="email-arrow" src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/right-arrow.png?648" alt="">
+                    <img class="email-arrow" src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/arrowright.svg?1286" alt="">
                   </div>
                 {% endform %}
               {% endif %}
@@ -307,14 +310,17 @@
 
           <div class="{% if block.type == 'link_list' %} link-list-container {% endif %}">
             {% elsif block.type == 'link_list' %}
-              <div class="footer_menu {% if block.settings.logo_on_list %}logo-block{% endif %} {% if block.id == '1571229229285' %}footer-2 {% elsif block.id == 'footer-1' %} footer-1 {% endif %} ">
+              <div class="footer_menu {% if block.settings.logo_on_list %}logo-block{% endif %} {% if block.id == '1571230502546' %}footer-2 {% elsif block.id == 'footer-1' %} footer-1 {% endif %} ">
                 {% if block.settings.menu != blank %}
 
                     <ul>
                       {% for link in linklists[block.settings.menu].links %}
                         <li><p><a href="{{ link.url }}">{{ link.title }}</a></p></li>
                       {% endfor %}
-                      {% if block.id == '1571229229285' %}
+                      {% if block.id == '1571230502546' %}
+                        <li><p><a href="/account">Mon Compte</a></p></li>
+                      {% endif %}
+                      {% if block.id == '1571230502546' %}
                         <li>
                          <div class="social-block">
                           {% include 'social-icons' %}
