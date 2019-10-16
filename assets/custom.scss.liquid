@@ -130,7 +130,7 @@
       }
 
       .newsletter_section {
-        margin-bottom: 100px;
+        margin-bottom: 66px;
         p {
           padding-top: 0px !important;
         }
@@ -191,15 +191,34 @@
       }
 
       .footer-1 {
-        height: 280px;
+        height: 200px;
         width:200px;
         flex-shrink:1;
+        align-self: flex-end;
+        display:flex;
+
+        .toggle_content {
+          align-self: flex-end;
+        }
       }
 
       .footer-2 {
-        height: 280px;
+        height: 200px;
         width:200px;
         flex-shrink:1;
+        align-self: flex-end;
+        display:flex;
+
+        img {
+          max-width: 200% !important;
+          height: 65px;
+          margin-bottom: 23px;
+        }
+
+
+        .toggle_content {
+          align-self: flex-end;
+        }
       }
 
       .footer-3 {
@@ -273,6 +292,7 @@
       }
 
       .newsletter_section{
+        width: 100%;
         margin-top: 50px;
         display: flex;
         flex-direction: column;

@@ -106,8 +106,6 @@
           AND SECOND FOOTERMENUS{% endcomment %}
 
           {% elsif block.type == 'link_list' %}
-            <div class="footer_menu {% if block.settings.logo_on_list %}logo-block{% endif %} {% if block.id == '1571230502546' %}footer-2 {% elsif block.id == 'footer-1' %} footer-1 {% endif %} ">
-                <h6>{{ linklists[block.settings.menu].title }}<span class="right icon-down-arrow"></span></h6>
                 <div class="toggle_content">
                   <ul>
                     {% if block.settings.menu != blank %}
@@ -122,7 +120,6 @@
                       {% endif %}
 
                   </ul>
-                </div>
               {% else %}
                 <h6>Menu title<span class="right icon-down-arrow"></span></h6>
                 <div class="toggle_content">
