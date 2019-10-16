@@ -243,21 +243,48 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
+.nav {
+  .cart_container {
+    display:none;
+  }
+}
+
 .separator {
   height: 63px;
   width: 2px;
   margin-top: 8px;
 }
 
+.top_bar {
+  display: none;
+}
+
+.cart_count {
+  margin-bottom:10px;
+}
+
+.cart_container {
+
+}
+
+#new-cart-icon {
+  height: 90%;
+}
+
+.mini_cart, .nav a.mini_cart {
+  background-color: white;
+}
 
 @media (min-width: 860px) {
 
   .right-side-menu {
-    margin-right: 24px;
+    padding-right: 12px;
     font-size: 16px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: relative;
+    width: 260px;
   }
   .right-side-menu {
     p {
