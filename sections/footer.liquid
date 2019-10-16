@@ -207,7 +207,6 @@
 
 <footer class="footer mobile">
   <div class="container footer-menu-wrap custom-container">
-    <div class="{% if block.type == 'link_list' %} link-list-container {% endif %}">
       {% for block in section.blocks reversed %}
         <div class="{% if forloop.length >= 5 %}one-fifth column{% elsif forloop.length == 4 %}one-third column footer-columns{% elsif forloop.length == 3 %}one-third column{% elsif forloop.length == 2 %}one-half column{% endif %} medium-down--one-whole footer-columns" {{ block.shopify_attributes }}>
           {% if block.type == 'logo' %}
@@ -308,15 +307,14 @@
 
           <div class="{% if block.type == 'link_list' %} link-list-container {% endif %}">
             {% elsif block.type == 'link_list' %}
-              <div class="footer_menu {% if block.settings.logo_on_list %}logo-block{% endif %}">
+              <div class="footer_menu {% if block.settings.logo_on_list %}logo-block{% endif %} {% if block.id == '1571229229285' %}footer-2 {% elsif block.id == 'footer-1' %} footer-1 {% endif %} ">
                 {% if block.settings.menu != blank %}
 
                     <ul>
-                      <li></li>
                       {% for link in linklists[block.settings.menu].links %}
                         <li><p><a href="{{ link.url }}">{{ link.title }}</a></p></li>
                       {% endfor %}
-                      {% if block.id == 'footer-2' %}
+                      {% if block.id == '1571229229285' %}
                         <li>
                          <div class="social-block">
                           {% include 'social-icons' %}
