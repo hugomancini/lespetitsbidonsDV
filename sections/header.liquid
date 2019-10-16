@@ -79,7 +79,7 @@
       {% endif %}
       {% if section.settings.show_cart %}
         <div class="cart_container">
-          <a href="/cart" class="{% if section.settings.cart_icon == "cart" %}icon-cart{% else %}icon-bag{% endif %} mini_cart dropdown_link" title="{{ 'layout.general.cart' | t | escape }}" data-no-instant> <span class="cart_count">{{ cart.item_count }}</span></a>
+          <a href="/cart" class="mini_cart dropdown_link" title="{{ 'layout.general.cart' | t | escape }}" data-no-instant> <img src="{{ section.settings.new_cart_url }}" alt="" class="new_cart_icon"><span class="cart_count">{{ cart.item_count }}</span></a>
         </div>
       {% endif %}
     </div>
@@ -187,9 +187,7 @@
       </ul>
       {% if section.settings.show_cart %}
         <div class="cart_container">
-          <a href="/cart" class="{% if section.settings.cart_icon == "cart" %}icon-cart{% else %}icon-bag{% endif %} mini_cart dropdown_link" data-no-instant>
-            <span class="cart_count">{{ cart.item_count }}</span>
-          </a>
+          <a href="/cart" class="mini_cart dropdown_link" title="{{ 'layout.general.cart' | t | escape }}" data-no-instant> <img src="{{ section.settings.new_cart_url }}" alt="" class="new_cart_icon"><span class="cart_count">{{ cart.item_count }}</span></a>
           {% unless settings.cart_action == 'ajax' and template contains 'cart' %}
             <div class="cart_content animated fadeIn">
               <div class="js-empty-cart__message {% if cart.item_count > 0 %}hidden{% endif %}">
@@ -334,7 +332,7 @@
         {% endif %}
         {% if shop.customer_accounts_enabled %}
           <li>
-            <a href="/account" class="icon-user" title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}"> <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span></a>
+            <a href="/account" class="" title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}"> <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span></a>
           </li>
         {% endif %}
       </ul>
@@ -426,15 +424,15 @@
           </li>
         {% endif %}
         {% if shop.customer_accounts_enabled %}
-          <li>
-            <a href="/account" class="icon-user" title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}"> <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span></a>
-          </li>
+          <div>
+            <a href="/account" class="" title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}"> <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span></a>
+          </div>
         {% endif %}
         <div class="separator">
           <img src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/separator.svg?882" alt="">
         </div>
           <div class="cart_container">
-          <a href="/cart" class="{% if section.settings.cart_icon == "cart" %}icon-cart{% else %}icon-bag{% endif %} mini_cart dropdown_link" title="{{ 'layout.general.cart' | t | escape }}" data-no-instant> <span class="cart_count">{{ cart.item_count }}</span></a>
+          <a href="/cart" class="mini_cart dropdown_link" title="{{ 'layout.general.cart' | t | escape }}" data-no-instant> <img src="{{ section.settings.new_cart_url }}" alt="" class="new_cart_icon"><span class="cart_count">{{ cart.item_count }}</span></a>
         </div>
       {% endif %}
       </div>
@@ -522,6 +520,12 @@
       "id": "logo_url",
       "label": "SVG logo url",
       "info": "Paste SVG logo url"
+    },
+    {
+      "type": "text",
+      "id": "new_cart_url",
+      "label": "SVG Cart icon",
+      "info": "Paste SVG cart icon url"
     },
     {
      "type": "header",
