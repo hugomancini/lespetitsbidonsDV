@@ -207,6 +207,7 @@
 
 <footer class="footer mobile">
   <div class="container footer-menu-wrap custom-container">
+    <div class="{% if block.type == 'link_list' %} link-list-container {% endif %}">
       {% for block in section.blocks reversed %}
         <div class="{% if forloop.length >= 5 %}one-fifth column{% elsif forloop.length == 4 %}one-third column footer-columns{% elsif forloop.length == 3 %}one-third column{% elsif forloop.length == 2 %}one-half column{% endif %} medium-down--one-whole footer-columns" {{ block.shopify_attributes }}>
           {% if block.type == 'logo' %}
@@ -248,11 +249,6 @@
                   <div class="nl-subtitle">
                     <p>{{ block.settings.nl-subtitle-footer }}</p>
                 </div>
-                {% endif %}
-              </div>
-              <div class="social-block">
-                {% if block.settings.show_social %}
-                  {% include 'social-icons' %}
                 {% endif %}
               </div>
 
@@ -304,27 +300,36 @@
                 {% endform %}
               {% endif %}
             </div>
+            </div>
           </div>
 
          {% comment %} SEE THIS BLOCK RIGHT HERE AND TRY TO MAKE A IF STATEMENT TO SEPARATE FIRST
           AND SECOND FOOTERMENUS{% endcomment %}
 
-          {% elsif block.type == 'link_list' %}
-            <div class="footer_menu {% if block.settings.logo_on_list %}logo-block{% endif %}">
-              {% if block.settings.menu != blank %}
+          <div class="{% if block.type == 'link_list' %} link-list-container {% endif %}">
+            {% elsif block.type == 'link_list' %}
+              <div class="footer_menu {% if block.settings.logo_on_list %}logo-block{% endif %}">
+                {% if block.settings.menu != blank %}
 
-                  <ul>
-                    <li></li>
-                    {% for link in linklists[block.settings.menu].links %}
-                      <li><p><a href="{{ link.url }}">{{ link.title }}</a></p></li>
-                    {% endfor %}
-                  </ul>
-              {% else %}
-                  <ul>
-                    <li><p>{{ 'homepage.onboarding.no_content' | t }}</p></li>
-                  </ul>
-              {% endif %}
-            </div>
+                    <ul>
+                      <li></li>
+                      {% for link in linklists[block.settings.menu].links %}
+                        <li><p><a href="{{ link.url }}">{{ link.title }}</a></p></li>
+                      {% endfor %}
+                      {% if block.id == 'footer-2' %}
+                        <li>
+                         <div class="social-block">
+                          {% include 'social-icons' %}
+                          </div>
+                       </li>
+                      {% endif %}
+                    </ul>
+                {% else %}
+                    <ul>
+                      <li><p>{{ 'homepage.onboarding.no_content' | t }}</p></li>
+                    </ul>
+                {% endif %}
+              </div>
 
           {% elsif block.type == 'text' %}
             <div class="footer_content footer-text {% if block.settings.title == blank %}no-footer-title{% endif %}">
