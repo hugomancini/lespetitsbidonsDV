@@ -424,7 +424,7 @@
           </li>
         {% endif %}
         {% if shop.customer_accounts_enabled %}
-          <div>
+          <div class="my-account">
             <a href="/account" class="" title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}"> <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span></a>
           </div>
         {% endif %}
