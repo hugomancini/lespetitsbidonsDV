@@ -4449,6 +4449,15 @@
       "footer": {
         "type": "footer",
         "blocks": {
+          "1571230502546": {
+            "type": "link_list",
+            "settings": {
+              "menu": "main-menu",
+              "logo-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/logo.svg?882",
+              "social_icons_footer": false,
+              "logo_on_list": true
+            }
+          },
           "footer-1": {
             "type": "link_list",
             "settings": {
@@ -4468,15 +4477,6 @@
               "show_firstname": false,
               "show_lastname": false,
               "show_social": true
-            }
-          },
-          "1571230502546": {
-            "type": "link_list",
-            "settings": {
-              "menu": "main-menu",
-              "logo-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/logo.svg?882",
-              "social_icons_footer": false,
-              "logo_on_list": true
             }
           }
         },
@@ -4895,6 +4895,89 @@
         "settings": {
           "title": "value proposition"
         }
+      },
+      "1571347915774": {
+        "type": "scroll-time-line",
+        "blocks": {
+          "1571347915774-0": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "image_crop": "none",
+              "title": "Your headline",
+              "text": "<p>Promotion description appears here.<\/p>",
+              "button_label": "View all",
+              "link": "",
+              "bg_color": "",
+              "text_color": ""
+            }
+          },
+          "1571347915774-1": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "image_crop": "none",
+              "title": "Your headline",
+              "text": "<p>Promotion description appears here.<\/p>",
+              "button_label": "View all",
+              "link": "",
+              "bg_color": "",
+              "text_color": ""
+            }
+          },
+          "1571348384536": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "image_crop": "none",
+              "title": "Your headline",
+              "text": "<p>Promotion description appears here.<\/p>",
+              "button_label": "View all",
+              "link": "",
+              "bg_color": "",
+              "text_color": ""
+            }
+          },
+          "1571348390407": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "image_crop": "none",
+              "title": "Your headline",
+              "text": "<p>Promotion description appears here.<\/p>",
+              "button_label": "View all",
+              "link": "",
+              "bg_color": "",
+              "text_color": ""
+            }
+          },
+          "1571348393768": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "image_crop": "none",
+              "title": "Your headline",
+              "text": "<p>Promotion description appears here.<\/p>",
+              "button_label": "View all",
+              "link": "",
+              "bg_color": "",
+              "text_color": ""
+            }
+          }
+        },
+        "block_order": [
+          "1571347915774-0",
+          "1571347915774-1",
+          "1571348384536",
+          "1571348390407",
+          "1571348393768"
+        ],
+        "settings": {
+          "frontpage_text_align": "right",
+          "frontpage_image_position": "left",
+          "frontpage_grid_style": false,
+          "featured_links_per_row": "1"
+        }
       }
     },
     "content_for_index": [
@@ -4903,7 +4986,8 @@
       "1571064040930",
       "1571063917959",
       "1571064405470",
-      "1571064476931"
+      "1571064476931",
+      "1571347915774"
     ]
   }
 }

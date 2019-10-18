@@ -5,6 +5,69 @@
 /*FONTS*/
 
 
+
+  @font-face {
+      font-family: 'gorditabold';
+      src: url('gorditabold-webfont.eot');
+      src: url('gorditabold-webfont.eot?#iefix') format('embedded-opentype'),
+           url('gorditabold-webfont.woff2') format('woff2'),
+           url('gorditabold-webfont.woff') format('woff'),
+           url('gorditabold-webfont.ttf') format('truetype'),
+           url('gorditabold-webfont.svg#gorditabold') format('svg');
+      font-weight: normal;
+      font-style: normal;
+
+  }
+
+
+
+
+  @font-face {
+      font-family: 'gorditalight';
+      src: url('gorditalight-webfont.eot');
+      src: url('gorditalight-webfont.eot?#iefix') format('embedded-opentype'),
+           url('gorditalight-webfont.woff2') format('woff2'),
+           url('gorditalight-webfont.woff') format('woff'),
+           url('gorditalight-webfont.ttf') format('truetype'),
+           url('gorditalight-webfont.svg#gorditalight') format('svg');
+      font-weight: normal;
+      font-style: normal;
+
+  }
+
+
+
+
+  @font-face {
+      font-family: 'gorditamedium';
+      src: url('gorditamedium-webfont.eot');
+      src: url('gorditamedium-webfont.eot?#iefix') format('embedded-opentype'),
+           url('gorditamedium-webfont.woff2') format('woff2'),
+           url('gorditamedium-webfont.woff') format('woff'),
+           url('gorditamedium-webfont.ttf') format('truetype'),
+           url('gorditamedium-webfont.svg#gorditamedium') format('svg');
+      font-weight: normal;
+      font-style: normal;
+
+  }
+
+
+
+
+  @font-face {
+      font-family: 'gorditaregular';
+      src: url('gorditaregular-webfont.eot');
+      src: url('gorditaregular-webfont.eot?#iefix') format('embedded-opentype'),
+           url('gorditaregular-webfont.woff2') format('woff2'),
+           url('gorditaregular-webfont.woff') format('woff'),
+           url('gorditaregular-webfont.ttf') format('truetype'),
+           url('gorditaregular-webfont.svg#gorditaregular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+
+  }
+
+
   @font-face {
       font-family: 'moam91regular';
       src: url('moam91-webfont.woff2') format('woff2'),
@@ -28,26 +91,27 @@
 
 
   h1, h2, h3, h4, h5, h6 {
-   font-family: 'moam91regular' !important;
+   font-family: 'gorditabold' !important;
   }
 
   body {
-    font-family: 'Fashion Fetish' !important;
+    font-family: 'gorditaregular' !important;
   }
 
   header, footer {
     a{
-      font-family: 'moam91regular' !important;
+      font-family: 'gorditabold' !important;
     }
+  }
+
+  a.button, .button, .action_button, a.second_button {
+    font-family: 'gorditabold' !important;
   }
 
 
 /*GENERAL STYLES*/
 
-
-
-
-@media (max-width: 360px) {
+  @media (max-width: 360px) {
  .index-sections {
         width: 355px;
       }
@@ -69,6 +133,28 @@
       display: none;
     }
   }
+
+
+
+/*BUTTONS*/
+
+  .white-button:hover {
+    transition-duration: 0.4s;
+    background-color:#E6FFFD !important;
+  }
+
+  .green-button {
+    background-color: $main-color !important;
+    color: white !important;
+    font-weight: bolder !important;
+    border: none !important;
+  }
+
+  .green-button:hover {
+    transition-duration: 0.4s;
+    background-color: #3ecdc1!important;
+  }
+
 
 /*FOOTER*/
 
