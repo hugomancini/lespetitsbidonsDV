@@ -3985,6 +3985,7 @@
     "image_loading_style": "blur-up",
     "custom_scripts": "",
     "logo_color": "#020f4c",
+    "main_color": "#0fbeb2",
     "regular_color": "#2b2a2a",
     "banner_color": "#ffffff",
     "headline_color": "#454545",
@@ -4151,7 +4152,7 @@
     "cart_message": "",
     "show_shipping_calculator": false,
     "shipping_calculator_default_country": "United States",
-    "show_multiple_currencies": true,
+    "show_multiple_currencies": false,
     "currency_format": "money_format",
     "supported_currencies": "USD CAD AUD GBP EUR JPY",
     "default_currency": "USD",
@@ -4421,7 +4422,9 @@
         "type": "header",
         "settings": {
           "promo_text": "",
-          "social_icons_header": true,
+          "logo_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/logo.svg?734",
+          "new_cart_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/kewlcart.svg?882",
+          "social_icons_header": false,
           "phone_number": "",
           "top_bar_menu": "",
           "show_cart": true,
@@ -4431,7 +4434,7 @@
           "logo_home": "",
           "logo_mobile": "",
           "main_linklist": "main-menu",
-          "main_linklist2": "accound",
+          "main_linklist2": "",
           "vertical_menu": false,
           "search_enabled": false,
           "fixed_header": true,
@@ -4446,42 +4449,39 @@
       "footer": {
         "type": "footer",
         "blocks": {
-          "footer-0": {
-            "type": "logo",
-            "settings": {
-              "image": "",
-              "text_align": "left",
-              "social_icons_footer": false
-            }
-          },
           "footer-1": {
             "type": "link_list",
             "settings": {
               "menu": "footer",
-              "social_icons_footer": false
-            }
-          },
-          "footer-2": {
-            "type": "link_list",
-            "settings": {
-              "menu": "main-menu",
-              "social_icons_footer": false
+              "logo-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/logo.svg?882",
+              "social_icons_footer": false,
+              "logo_on_list": false
             }
           },
           "1571064995074": {
             "type": "newsletter",
             "settings": {
-              "title": "Inscrivez-vous pour recevoir nos petites news",
+              "nl-title-footer": "ENVIE D’UN MONDE PLUS PROPRE ?",
+              "nl-subtitle-footer": "Inscrivez-vous pour recevoir nos petites news!",
+              "mobile-footer-logo-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/logo.svg?882",
               "newsletter_text": "",
               "show_firstname": false,
               "show_lastname": false,
               "show_social": true
             }
+          },
+          "1571230502546": {
+            "type": "link_list",
+            "settings": {
+              "menu": "main-menu",
+              "logo-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/logo.svg?882",
+              "social_icons_footer": false,
+              "logo_on_list": true
+            }
           }
         },
         "block_order": [
-          "footer-0",
-          "footer-2",
+          "1571230502546",
           "footer-1",
           "1571064995074"
         ],
