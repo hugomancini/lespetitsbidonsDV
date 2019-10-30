@@ -120,7 +120,7 @@
         "type": "color",
         "id": "sub_footer_text_color",
         "label": "Footer text",
-        "default": "#AE3333"
+        "default": "#ffffff"
       },
       {
         "type": "color",
@@ -249,25 +249,37 @@
         "type": "color",
         "id": "btn_color",
         "label": "Buttons",
-        "default": "#000000"
+        "default": "#0FBEB2"
       },
       {
         "type": "color",
-        "id": "banner_button_color",
-        "label": "Banner buttons",
-        "default": "#ffffff"
+        "id": "btn_color_white",
+        "label": "Buttons White",
+        "default": "#FFFFFF"
       },
       {
         "type": "color",
         "id": "btn_hover_color",
         "label": "Buttons hover",
-        "default": "#AE3333"
+        "default": "#3ecdc1"
+      },
+      {
+        "type": "color",
+        "id": "btn_white_hover_color",
+        "label": "Buttons white hover",
+        "default": "#E6FFFD"
       },
       {
         "type": "color",
         "id": "btn_text_color",
         "label": "Button label",
         "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "banner_button_color",
+        "label": "Banner buttons",
+        "default": "#ffffff"
       },
       {
         "type": "select",
@@ -489,7 +501,7 @@
         "type": "color",
         "id": "testimonial_bg_color",
         "label": "Background",
-        "default": "#666666"
+        "default": "#e4f7f6"
       },
       {
         "type": "header",
@@ -1215,6 +1227,17 @@
   {
     "name": "Product grid",
     "settings": [
+      {
+        "type": "text",
+        "id": "subscribe_text",
+        "label": "Je m'abonne",
+        "default": "JE M'ABONNE"
+      },
+      {
+        "type": "url",
+        "id": "subscribe_link",
+        "label": "subscribtion link"
+      },
       {
         "type": "checkbox",
         "id": "thumbnail_hover_enabled",

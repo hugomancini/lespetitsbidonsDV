@@ -1,0 +1,144 @@
+$main-color: {{ settings.main_color }};
+.product-details .title {
+  letter-spacing: 0;
+}
+
+// PRODUCT
+
+.product {
+  .shopify-product-form {
+    margin-bottom: 0;
+  }
+  .social_buttons {
+    border-top: 1px solid $main_color;
+  }
+  .why-sub, .slideee {
+    text-align: center;
+  }
+  .why-sub {
+    cursor:pointer;
+    font-family: gorditabold;
+    font-size: 1.0625rem !important;
+    text-decoration: underline;
+  }
+  .product_form {
+    margin: auto;
+  }
+  .subscribe {
+    // max-width: calc(400px);
+  }
+  .sale_banner_product {
+    background: #020f4c;
+    position: absolute;
+    right: 3%;
+    top: -2%;
+  }
+  .desc {
+    padding: 0 4%;
+  }
+  .description {
+    font-size: 0.9375rem !important;
+  }
+  .product_name {
+    padding-top: 0;
+    padding-bottom: 0;
+
+  }
+  .reassurance {
+    margin-bottom: 15px;
+    margin-top: 45px;
+    .flex-text {
+      display: flex;
+      flex-grow: 1;
+
+      .cont-text {
+        flex: 1;
+        font-size: 0.8rem !important;
+        text-align: center;
+        line-height: 1rem;
+      }
+    }
+    .flex-logo {
+      flex-grow: 1;
+      display: flex;
+      .cont-logo {
+        text-align: center;
+        flex: 1;
+        .img-cont {
+          min-height: 60px;
+        }
+      }
+    }
+
+  }
+  h3 {
+    font-size: 1.4rem !important;
+  }
+  .savings, .sale {
+    width: 100%;
+  }
+  // .tabs-content{
+  //   text-align: center;
+  // }
+  .tabs {
+    margin: 33px 0;
+    li {
+      width: 100%;
+      a {
+        width: 100% !important;
+        text-align: center;
+
+      }
+    }
+    li:first-child a {
+      text-align: left;
+    }
+    li:last-child a {
+      text-align: right;
+    }
+  }
+}
+
+
+.variants-available {
+  margin-top: 25px;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+
+  .one-variant {
+    flex: 1;
+    div {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      margin: auto;
+      span {
+        opacity: 0;
+        display: block;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 4px solid white;
+
+      }
+    }
+    p {
+      text-align: center;
+      font-size: 0.8125rem !important;
+
+    }
+    &.selected, &:hover {
+      div {
+        margin: auto;
+        span {
+           opacity: 1;
+           transition: 1s opacity;
+        }
+      }
+      p {
+
+      }
+    }
+  }
+}

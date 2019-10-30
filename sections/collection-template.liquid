@@ -15,8 +15,11 @@
       {% endif %}
 
       {% include 'image-element', image: image, alt: collection.title, stretch_width: true, progressive: true %}
-
-      {% if section.settings.display_collection_title %}
+      {% if section.settings.collection_title %}
+        <div class="caption captionOverlay--true">
+          <h1 class="headline">{{ section.settings.collection_title }}</h1>
+        </div>
+      {% elsif section.settings.display_collection_title %}
         <div class="caption captionOverlay--true">
           <h1 class="headline">{{ collection.title }}</h1>
         </div>
@@ -24,10 +27,20 @@
   </header>
 {% endif %}
 
+
 <a name="pagecontent" id="pagecontent"></a>
 
 <div class="container">
   {% paginate collection.products by section.settings.pagination_limit %}
+    {% if section.settings.collection_title and section.settings.featured_collection_image == false %}
+      <div class="center">
+        <h1>{{ section.settings.collection_title }}</h1>
+      </div>
+    {% elsif section.settings.display_collection_title and section.settings.featured_collection_image == false %}
+      <div class="center">
+        <h1>{{ collection.title }}</h1>
+      </div>
+    {% endif %}
     <div class="clearfix breadcrumb-collection">
       {% if section.settings.collection_breadcrumb %}
         <script type="application/ld+json">
@@ -74,7 +87,7 @@
           <a href="{{ shop.url }}" title="{{ shop.name | escape }}">
             <span>{{ 'general.breadcrumbs.home' | t }}</span>
           </a>
-          <span class="breadcrumb-divider">/</span>
+          <span class="breadcrumb-divider"><img src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/right.svg?4772" class="right-svg" alt=""></span>
           <a href="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}" title="{{ collection.title | escape }}" class="breadcrumb_link">
             <span>{{ collection.title }}</span>
           </a>
@@ -82,7 +95,7 @@
             {% for tag in current_tags %}
 
               {% unless tag contains 'meta-' %}
-                <span class="breadcrumb-divider">/</span>
+                <span class="breadcrumb-divider"><img src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/right.svg?4772" class="right-svg" alt=""></span>
                 <a href="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}" title="{{ tag | escape }}">
                   <span>{{ tag }}</span>
                 </a>
@@ -91,18 +104,14 @@
           {% endif %}
 
           {% if paginate.pages != 0 and settings.pagination_type != 'load_more' and settings.pagination_type != 'infinite_scroll' %}
-            <span class="breadcrumb-divider">/</span> {{ 'general.breadcrumbs.page' | t: current_page: paginate.current_page, pages: paginate.pages }}
+            <span class="breadcrumb-divider"><img src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/right.svg?4772" class="right-svg" alt=""></span> {{ 'general.breadcrumbs.page' | t: current_page: paginate.current_page, pages: paginate.pages }}
           {% endif %}
         </div>
       {% endif %}
     </div>
     <div class="section clearfix">
-      {% if section.settings.display_collection_title and section.settings.featured_collection_image == false %}
-        <div class="eight columns">
-          <h1>{{ collection.title }}</h1>
-        </div>
-      {% endif %}
-      <div class="eight columns section_select medium-down--one-whole">
+
+      <div class="section_select">
         {% if collection.handle != blank and collection.products_count > 0 %}
           {% if section.settings.collection_tags %}
             {% for tag in collection.all_tags %}
@@ -185,6 +194,13 @@
   "name": "Collection",
   "class": "collection-template-section",
   "settings": [
+    {
+      "type": "text",
+      "id": "collection_title",
+      "label": "same title for all collection",
+      "default": "La petite boutique"
+
+    },
     {
       "type": "checkbox",
       "id": "display_collection_title",

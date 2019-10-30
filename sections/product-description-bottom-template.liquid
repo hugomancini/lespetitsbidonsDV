@@ -3,7 +3,13 @@
 - Product template
 - Uses blocks
 {% endcomment %}
+{% assign found = false %}
 
+{% for c in product.collections %}
+  {% if c.handle == "lessive-ecologique" %}
+    {% assign found = true %}
+  {% endif %}
+{% endfor %}
 <a name="pagecontent" id="pagecontent"></a>
 
 <div class="container main content product-name--{{ product.handle }}">
@@ -186,6 +192,31 @@
               {% include "social-buttons" with "product" %}
             {% endif %}
           </div>
+
+          {% if found and settings.subscribe_text != blank %}
+            <br>
+            <a class="why-sub closed">{{section.settings.why_sub}}</a>
+            {% assign pagee =  section.settings.why_sub_page | remove: '/pages/' %}
+            <p class='slideee'>{{ pages[pagee].content }}</p>
+          {% endif %}
+
+          {% for block in section.blocks %}
+            {% if block.type == 'reassurance' %}
+              <div class="reassurance">
+                {% for i in (0..5)  %}
+                  {% assign logvar = "logo" | append: i  %}
+                  {% assign textvar = "text" | append: i  %}
+                  {% if block.settings[logvar] != blank %}
+                    <div class="cont-logo">
+                      <img src="{{ block.settings[logvar] }}" alt="">
+                      <p class="logo-text">{{ block.settings[textvar] }}</p>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+          {% endfor %}
+
         </div>
 
         <div class="sixteen columns">
@@ -200,7 +231,10 @@
           <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
         </div>
       {% endif %}
+
+
     </div>
+
 
     {% if sidebar %}
 
@@ -230,6 +264,17 @@
   "name": "Product | bottom",
   "class": "product-template product-description-bottom-template",
   "settings": [
+    {
+      "type": "text",
+      "id": "why_sub",
+      "label": "Pourquoi s'abonner",
+      "default": "Pourquoi s'abonner ?"
+    },
+    {
+      "type": "url",
+      "id": "why_sub_page",
+      "label": "Pourquoi s'abonner content (Must be a PAGE)"
+    },
     {
       "type": "checkbox",
       "id": "product_breadcrumb",
@@ -488,6 +533,59 @@
     }
   ],
   "blocks": [
+  {
+    "type": "reassurance",
+    "name": "reassurance",
+    "settings": [
+      {
+        "type": "text",
+        "id": "logo1",
+        "label": "Réassurance logo 1"
+      },{
+        "type": "text",
+        "id": "text1",
+        "label": "Réassurance text 1"
+      },
+      {
+        "type": "text",
+        "id": "logo2",
+        "label": "Réassurance logo 2"
+      },{
+        "type": "text",
+        "id": "text2",
+        "label": "Réassurance text 2"
+      },
+      {
+        "type": "text",
+        "id": "logo3",
+        "label": "Réassurance logo 3"
+      },{
+        "type": "text",
+        "id": "text3",
+        "label": "Réassurance text 3"
+      },
+      {
+        "type": "text",
+        "id": "logo4",
+        "label": "Réassurance logo 4"
+      },{
+        "type": "text",
+        "id": "text4",
+        "label": "Réassurance text 4"
+      },
+      {
+        "type": "text",
+        "id": "logo5",
+        "label": "Réassurance logo 5"
+      },{
+        "type": "text",
+        "id": "text5",
+        "label": "Réassurance text 5"
+      }
+    ]
+
+
+  },
     {
       "type": "filter_by_collection",
       "name": "Collection list",

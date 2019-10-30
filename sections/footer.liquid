@@ -5,7 +5,8 @@
 {% endcomment %}
 
 <footer class="footer desktop">
-  <div class="container footer-menu-wrap custom-container">
+  <div class="container footer-menu-wrap general-container">
+
       {% for block in section.blocks %}
         <div class="{% if forloop.length >= 5 %}one-fifth column{% elsif forloop.length == 4 %}one-third column footer-columns{% elsif forloop.length == 3 %}one-third column{% elsif forloop.length == 2 %}one-half column{% endif %} medium-down--one-whole footer-columns footer_menu {% if block.settings.logo_on_list %}logo-block{% endif %} {% if block.id == '1571230502546' %}footer-2 {% elsif block.id == 'footer-1' %} footer-1 {% elsif block.id == '1571064995074' %} footer-3 {% endif %} " {{ block.shopify_attributes }}>
           {% if block.type == 'logo' %}
@@ -207,7 +208,7 @@
 {% endcomment %}
 
 <footer class="footer mobile">
-  <div class="container footer-menu-wrap custom-container">
+  <div class="container footer-menu-wrap footer-container">
       {% for block in section.blocks reversed %}
         <div class="{% if forloop.length >= 5 %}one-fifth column{% elsif forloop.length == 4 %}one-third column footer-columns{% elsif forloop.length == 3 %}one-third column{% elsif forloop.length == 2 %}one-half column{% endif %} medium-down--one-whole footer-columns" {{ block.shopify_attributes }}>
           {% if block.type == 'logo' %}

@@ -8,18 +8,20 @@
 <div class="container">
   <div class="sixteen columns">
 {% endif %}
-
+    <h3 class="desktop headline">{{section.settings.principal_title}}</h3>
 {% if section.blocks.size > 0 %}
   <div  id="testimonial-{{section.id}}"
         class="testimonial-slideshow
         js-testimonial
-        {% if section.settings.testimonial_text_animation != '' %}text-animation--true{% endif %}
+        {% comment %}{% if section.settings.testimonial_text_animation != '' %}text-animation--true{% endif %}{% endcomment %}
         transparentBackground--{{settings.slideshow_button_style}}
         full-width--{{ section.settings.wide_display }}"
         data-slider-id="testimonial-{{section.id}}"
         data-slideshow-speed="{{section.settings.testimonial_speed}}"
-        data-slideshow-text-animation="{{section.settings.testimonial_text_animation}}"
+        {% comment %}data-slideshow-text-animation="{{section.settings.testimonial_text_animation}}"{% endcomment %}
         >
+
+
     {% for block in section.blocks %}
         <div class="testimonial-block gallery-cell slide-{{ forloop.index }} {% if block.settings.image == nil %}set-static use-mobile-color{% endif %}" {{ block.shopify_attributes }} data-block-id="{{block.id}}">
             {% assign image = block.settings.image %}
@@ -29,6 +31,9 @@
             {% endif %}
             <div class="caption position-{{block.settings.text_position}} js-caption">
                 <div class="caption-content testimonial-text {% if image != nil %}testimonial-text-mobile{% endif %} align-{{block.settings.text_align}}">
+                  {% if block.settings.name != blank %}
+                    <p class="first_name">{{ block.settings.name }}</p><br>
+                  {% endif %}
                   {% if block.settings.title != blank %}
                     <p class="headline">
                       {{ block.settings.title }}
@@ -38,9 +43,15 @@
                   <div class="subtitle">
                     {{ block.settings.testimonial }}
                     <p>
-                      {% if block.settings.name != blank %}
-                        {{ block.settings.name }}<br>
+                      {% if block.settings.stars == true %}
+                        <div class="stars">
+                          {% for index in (1..block.settings.stars_nb) %}
+                            <i class="fas fa-star green"></i>
+                          {% endfor %}
+                        </div>
+
                       {% endif %}
+
 
                       {% if block.settings.store_name != blank %}
                         {% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{% endif %}
@@ -56,7 +67,9 @@
     {% endfor %}
   </div>
 {% endif %}
-
+  <div class="center-cont ">
+    <a href="{{section.settings.testi_button_link}}" class="action_button first_button white-button highlight-true center-tr">{{section.settings.button_label}}</a>
+  </div>
 {% if section.settings.wide_display == false %}
   </div>
 </div>
@@ -74,29 +87,23 @@
       "label": "Wide display",
       "default": true
     },
+
     {
-      "type": "select",
-      "id": "testimonial_text_animation",
-      "label": "Text animation",
-      "options": [
-        {
-          "value": "",
-          "label": "None"
-        },
-        {
-          "value": "fadeIn",
-          "label": "Fade In"
-        },
-        {
-          "value": "fadeInUp",
-          "label": "Fade Up"
-        },
-        {
-          "value": "fadeInDown",
-          "label": "Fade Down"
-        }
-      ],
-      "default": "fadeInDown"
+      "type": "text",
+      "id": "principal_title",
+      "label": "Heading",
+      "default": "AVIS CLIENTS"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "AVIS CLIENTS"
+    },
+    {
+      "type": "url",
+      "id": "testi_button_link",
+      "label": "button link"
     },
     {
       "type": "range",
@@ -118,7 +125,7 @@
           "type": "text",
           "id": "title",
           "label": "Heading",
-          "default": "Customer Testimonial"
+          "default": "TITRE"
         },
         {
           "type": "richtext",
@@ -129,7 +136,8 @@
         {
           "type": "text",
           "id": "name",
-          "label": "Customer name"
+          "label": "Customer name",
+          "default": "titre"
         },
         {
           "type": "text",
@@ -195,6 +203,21 @@
           "type": "checkbox",
           "id": "darken_bg",
           "label": "Darken background image"
+        },
+        {
+          "type": "checkbox",
+          "id": "stars",
+          "label": "Display rating stars"
+        },
+        {
+          "type": "range",
+          "id": "stars_nb",
+          "label": "Display rating stars",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "default": 5,
+          "unit": "str"
         }
       ]
     }

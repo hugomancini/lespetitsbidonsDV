@@ -8,6 +8,15 @@
 
 {% assign variant = product.selected_or_first_available_variant %}
 
+{% assign found = false %}
+
+{% for c in product.collections %}
+  {% if c.handle == "lessive-ecologique" %}
+    {% assign found = true %}
+  {% endif %}
+{% endfor %}
+
+
 <div class="clearfix product_form init smart-payment-button--{{ show_payment_button }} {% if product.variants.size > 1 or product.options.size > 1 %}product_form_options{% endif %} product_form--{{ settings.product_form_style }}"
       id="product-form-{{ product.id }}"
       data-product-form
@@ -71,14 +80,7 @@
     {% endif %}
 
     <div class="purchase-details">
-      {% if settings.display_product_quantity %}
-        <div class="purchase-details__quantity product-quantity-box">
-          <label for="quantity">{{ 'products.product.quantity' | t }}</label>
-          <span class="ss-icon product-minus js-change-quantity" data-func="minus"><span class="icon-minus"></span></span>
-          <input type="number" min="1" size="2" class="quantity" name="quantity" id="quantity" value="1" {% if settings.limit_quantity and variant.inventory_management != blank and variant.inventory_policy == "deny" %}max="{{ variant.inventory_quantity }}"{% endif %} />
-          <span class="ss-icon product-plus js-change-quantity" data-func="plus"><span class="icon-plus"></span></span>
-        </div>
-      {% endif %}
+
       <div class="purchase-details__buttons purchase-details__spb--{{ show_payment_button }}">
         {% if settings.cart_action == 'reload_page' %}
           <input type="hidden" name="return_to" value="back" />
@@ -87,12 +89,106 @@
         {% endif %}
 
         {% capture add_to_cart_label %}{% if collection_handles contains 'pre-order' %}{{ 'collections.general.pre_order' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}{% endcapture %}
-        <button type="{% if settings.cart_action == 'ajax' %}button{% else %}submit{% endif %}" name="add" class="{% if settings.cart_action == 'ajax' %} ajax-submit {% endif %}action_button add_to_cart {% if show_payment_button %} action_button--secondary {% endif %}" data-label={{ add_to_cart_label | json }}>
-          <span class="text">{{ add_to_cart_label }}</span>
-          <svg x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" class="checkmark">
-            <path fill="none" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"/>
-          </svg>
-        </button>
+
+        {% if section.settings.display_savings and variant.available %}
+          <span class="sale savings">
+            {% if variant.price < variant.compare_at_price and variant.available %}
+              {{ 'products.product.savings' | t }}  {{ variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price }}% (<span class="money">{{ variant.compare_at_price | minus: variant.price | money }}</span>)
+            {% endif %}
+          </span><br>
+        {% endif %}
+
+{% comment %}          {% if settings.display_product_quantity %}
+            <div class="purchase-details__quantity product-quantity-box" style="display:none">
+              <span class="ss-icon product-minus js-change-quantity" data-func="minus"><span class="icon-minus"></span></span>
+              <input type="number" min="1" size="1" class="quantity" name="quantity" id="quantity" value="1" {% if settings.limit_quantity and variant.inventory_management != blank and variant.inventory_policy == "deny" %}max="{{ variant.inventory_quantity }}"{% endif %} />
+              <span class="ss-icon product-plus js-change-quantity" data-func="plus"><span class="icon-plus"></span></span>
+            </div>
+          {% endif %}{% endcomment %}
+
+          {% if collection_handles contains 'coming-soon' %}
+            <p class="modal_price">{{ 'collections.general.coming_soon' | t }}</p>
+          {% elsif variant.available == false %}
+            <span class="sold_out">{{ 'products.product.sold_out' | t }}</span>
+          {% else %}
+
+          {% if template == 'product' and settings.display_product_quantity %}
+            <span class="plusmoins" style="width: 20%">
+               <span class="moins">-</span>
+               <input
+                id="quantity"
+                class="qte"
+                value="1"
+                {% if settings.limit_quantity and variant.inventory_management != blank and variant.inventory_policy == "deny" %}
+                max="{{ variant.inventory_quantity }}"
+                {% endif %}
+                name="quantity"
+                readonly="true"
+                type="number"
+                min="1"
+                size="1"
+                >
+               <span class="plus">+</span>
+            </span>
+            <span style="width: 80%">
+          {% endif %}
+          <button type="{% if settings.cart_action == 'ajax' %}button{% else %}submit{% endif %}" name="add" class="{% if settings.cart_action == 'ajax' %} ajax-submit {% endif %}action_button white-button add_to_cart {% if show_payment_button %} action_button--primary {% endif %}" data-label={{ add_to_cart_label | json }}>
+            <span class="text">
+                <p class="add-to-cart-label">
+
+                  <span>{{ add_to_cart_label }}</span>
+
+                  {% if variant.price < variant.compare_at_price and variant.available %}
+                    <span class="money">{{ variant.price | money }}
+                    </span>
+                    <span class="was_price">
+                      <span>{{ variant.compare_at_price | money }}</span>
+                    </span>
+
+                  {% else %}
+                    {% if variant.price > 0 %}
+                      <span class="money">{{ variant.price | money }}</span>
+                    {% else %}
+                      {{ settings.free_price_text }}
+                    {% endif %}
+                  {% endif %}
+                  {% if template == 'product' %}
+                    </span>
+                  {% endif %}
+
+                </p>
+   {% comment %}               <span content="{{ variant.price | money_without_currency | remove: "," }}" class="{% if variant.compare_at_price > variant.price %}sale{% endif %}">
+                    <span class="current_price {% if product.available == false %}hidden{% endif %}">
+                      {% if variant.price > 0 %}
+                        <span class="money">{{ variant.price | money }}</span>
+                      {% else %}
+                        {{ settings.free_price_text }}
+                      {% endif %}
+                    </span>
+                  </span>{% endcomment %}
+
+
+
+
+                {% include 'product-notify-me' %}
+              {% endif %}
+
+
+            </span>
+            <svg x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" class="checkmark">
+              <path fill="none" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"/>
+            </svg>
+          </button>
+
+          {% if template == 'product' and settings.display_product_quantity %}
+            </span>
+          {% endif %}
+
+          {% if found %}
+            <a href="{{settings.subscribe_link}}" class="action_button green-button subscribe">{{settings.subscribe_text}}</a>
+          {% endif %}
+
+
         {% if show_payment_button %}
           {{ form | payment_button }}
         {% endif %}

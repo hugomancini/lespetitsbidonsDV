@@ -422,9 +422,11 @@ $(function() {
     if (cart.item_count == 0) {
       $('.js-empty-cart__message').removeClass('hidden');
       $('.js-cart_content__form').addClass('hidden');
+      $('.new_cart_icon').attr('src', $('.new_cart_icon').attr('data-empty'))
     } else {
       $('.js-empty-cart__message').addClass('hidden');
       $('.js-cart_content__form').removeClass('hidden');
+      $('.new_cart_icon').attr('src', $('.new_cart_icon').attr('data-full'))
 
       $.each(cart.items, function(index, item) {
         var itemDiscounts = item.discounts;

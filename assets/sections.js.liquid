@@ -214,25 +214,72 @@ var testimonial = {
         })
       }
 
+// onresize yourFlickitySlider.resize();
       //initiate the slideshow
-      if (!$testimonialSlider.hasClass('flickity-enabled')){
-        var arrowShow = $testimonialSlider.find('.gallery-cell').length === 1 ? false : true;
-        $testimonialSlider.flickity({
-                        wrapAround: true,
-                        cellAlign: 'left',
-                        imagesLoaded: true,
-                        prevNextButtons: arrowShow,
-                        draggable: arrowShow,
-                        pageDots: usePageDots,
-                        autoPlay: settings.slideshowSpeed,
-                        arrowShape: arrowSize
-                      });
+      if (!$testimonialSlider.hasClass('flickity-enabled')) {
+        if ($(window).width() < 798) {
+            var $grp_cell = 1
+            var arrowShow = true;
+            console.log(arrowShow);
+            console.log("____________");
+            $testimonialSlider.flickity({
+              // wrapAround: true,
+              // cellAlign: 'center',
+              imagesLoaded: true,
+              prevNextButtons: true,
+              draggable: true,
+              pageDots: usePageDots,
+              autoPlay: settings.slideshowSpeed,
+              groupCells: $grp_cell,
+              arrowShape: arrowSize,
+              adaptiveHeight: true,
+              selectedAttraction: 0.2,
+              friction: 0.8
+              // contain: true
+              // percentPosition: false
+
+            });
+        }
+        else {
+            var $grp_cell = 3
+            var arrowShow = $testimonialSlider.find('.gallery-cell').length <= 3 ? false : true;
+            $testimonialSlider.flickity({
+              // wrapAround: true,
+              // cellAlign: 'center',
+              imagesLoaded: true,
+              prevNextButtons: arrowShow,
+              draggable: arrowShow,
+              pageDots: usePageDots,
+              autoPlay: settings.slideshowSpeed,
+              groupCells: $grp_cell,
+              arrowShape: arrowSize,
+              // adaptiveHeight: true,
+              selectedAttraction: 0.2,
+              friction: 0.8
+              // contain: true
+              // percentPosition: false
+
+            });
+        }
+
+
 
         if (settings.slideshowTextAnimation != ''){
           var flkty = $testimonialSlider.data('flickity');
           setTimeout(function() {
             $testimonialSlider.find('.gallery-cell:nth-child(1) .caption-content').addClass('animated ' + settings.slideshowTextAnimation);
+            $testimonialSlider.find('.gallery-cell:nth-child(1) .caption-content').css({'opacity': 1})
+
           }, 400);
+          setTimeout(function() {
+            $testimonialSlider.find('.gallery-cell:nth-child(2) .caption-content').addClass('animated ' + settings.slideshowTextAnimation);
+            $testimonialSlider.find('.gallery-cell:nth-child(2) .caption-content').css({'opacity': 1})
+
+          }, 700);
+          setTimeout(function() {
+            $testimonialSlider.find('.gallery-cell:nth-child(3) .caption-content').addClass('animated ' + settings.slideshowTextAnimation);
+            $testimonialSlider.find('.gallery-cell:nth-child(3) .caption-content').css({'opacity': 1})
+          }, 1000);
 
           $testimonialSlider.on( 'select.flickity', function() {
             if($testimonialSlider.is(':visible')) {
@@ -898,7 +945,6 @@ var productPage = {
             val = parseInt($input.val()),
             valMax = 100000000000000000000000000000,
             valMin = $input.attr('min') || 0;
-
         if ($input.attr('max') != null){
           valMax = $input.attr('max');
         }

@@ -1,0 +1,23 @@
+{% if found %}
+  <div class="variants-available">
+    {% for bidon in collections['lessive-ecologique'].products %}
+      {% for tag in bidon.tags %}
+        {% if tag contains 'meta-color' %}
+          {% assign color = tag | remove: "meta-color-" %}
+        {% endif %}
+      {% endfor %}
+
+      <a href="{{ bidon.url }}" class="one-variant {% if bidon.title == product.title %}selected{% endif %}">
+        <div id="{{color | remove: '#'}}" class="variant-dot" style="background: {{color}}"><span style="background: {{color}}"></span></div>
+        <p class="variant-title">{{ bidon.title }}</p>
+      </a>
+      <style>
+        .variants-available .one-variant.selected div[id="{{color | remove: '#'}}"],
+        .variants-available .one-variant:hover div[id="{{color | remove: '#'}}"] {
+          border: 1px solid {{color}};
+        }
+      </style>
+    {% endfor %}
+   </div>
+{% endif %}
+

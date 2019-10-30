@@ -1,7 +1,15 @@
 {% comment %}
 ** Product - default view **
 - Product template
+
 {% endcomment %}
+{% assign found = false %}
+
+{% for c in product.collections %}
+  {% if c.handle == "lessive-ecologique" %}
+    {% assign found = true %}
+  {% endif %}
+{% endfor %}
 
 <a name="pagecontent" id="pagecontent"></a>
 
@@ -31,11 +39,9 @@
   </div>
 
   {% comment %}Check to see if sidebar should be enabled{% endcomment %}
-  {% if section.blocks.size > 0 %}
-    {% assign sidebar = true %}
-  {% else %}
-    {% assign sidebar = false %}
-  {% endif %}
+
+    {% assign sidebar = section.settings.display_sidebar %}
+
 
   <div class="product clearfix">
     {% if sidebar %}
@@ -50,11 +56,11 @@
           >
       <div class="section product_section clearfix js-product_section {% if section.settings.product_images_position == 'right' %}align_right--images{% endif %}" data-rv-handle="{{ product.handle }}">
 
-        <div class="nine columns medium-down--one-whole {% if section.settings.product_images_position == 'left' %}alpha{% else %}omega{% endif %}">
+        <div class="one-half columns medium-down--one-whole {% if section.settings.product_images_position == 'left' %}alpha{% else %}omega{% endif %}">
           {% include 'product-images' %}
         </div>
 
-        <div class="seven columns medium-down--one-whole  {% if section.settings.product_images_position == 'left' %}omega{% else %}alpha{% endif %}">
+        <div class="one-half columns medium-down--one-whole desc {% if section.settings.product_images_position == 'left' %}omega{% else %}alpha{% endif %}">
 
           {% assign collection_handles = product.collections | map: 'handle' %}
           {% assign variant = product.selected_or_first_available_variant %}
@@ -103,37 +109,7 @@
           {% endif %}
 
 
-          {% if collection_handles contains 'coming-soon' %}
-            <p class="modal_price">{{ 'collections.general.coming_soon' | t }}</p>
-          {% else %}
-            <p class="modal_price">
-              <span class="sold_out">{% if variant.available == false %}{{ 'products.product.sold_out' | t }}{% endif %}</span>
-              <span content="{{ variant.price | money_without_currency | remove: "," }}" class="{% if variant.compare_at_price > variant.price %}sale{% endif %}">
-                <span class="current_price {% if product.available == false %}hidden{% endif %}">
-                  {% if variant.price > 0 %}
-                    <span class="money">{{ variant.price | money }}</span>
-                  {% else %}
-                    {{ settings.free_price_text }}
-                  {% endif %}
-                </span>
-              </span>
-              <span class="was_price">
-                {% if variant.price < variant.compare_at_price and variant.available %}
-                  <span class="money">{{ variant.compare_at_price | money }}</span>
-                {% endif %}
-              </span>
 
-              {% if section.settings.display_savings %}
-                <span class="sale savings">
-                  {% if variant.price < variant.compare_at_price and variant.available %}
-                    {{ 'products.product.savings' | t }}  {{ variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price }}% (<span class="money">{{ variant.compare_at_price | minus: variant.price | money }}</span>)
-                  {% endif %}
-                </span>
-              {% endif %}
-            </p>
-
-            {% include 'product-notify-me' %}
-          {% endif %}
 
           {% if section.settings.product_description_position == "top" %}
             {% if product.description != blank %}
@@ -141,18 +117,32 @@
                 {{ product.description | split: '<!-- split -->' | first }}
               </div>
             {% endif %}
+            {% include 'custom-lessive' %}
+
           {% endif %}
+
+
+
 
           {% unless collection_handles contains 'coming-soon' %}
             {% include 'product-form' with 'product' %}
           {% endunless %}
 
+          {% if found and settings.subscribe_text != blank %}
+            <p class="why-sub closed">{{section.settings.why_sub}}</p>
+            {% assign pagee =  section.settings.why_sub_page | remove: '/pages/' %}
+            <p class='slideee'>{{ pages[pagee].content }}</p>
+          {% endif %}
+
           {% if section.settings.product_description_position == "bottom" %}
+            <hr>
             {% if product.description != blank %}
               <div class="description bottom">
                 {{ product.description | split: '<!-- split -->' | first }}
               </div>
             {% endif %}
+            {% include 'custom-lessive' %}
+
           {% endif %}
 
           {% if section.settings.review_position == "next_to_gallery" %}
@@ -198,6 +188,42 @@
               {% endif %}
             </div>
           {% endif %}
+
+
+
+
+
+
+
+          {% for block in section.blocks %}
+            {% if block.type == 'reassurance' %}
+              <div class="reassurance">
+                <div class="flex-logo">
+                {% for i in (0..5)  %}
+                  {% assign logvar = "logo" | append: i  %}
+                  {% if block.settings[logvar] != blank %}
+                    <div class="cont-logo">
+                      <div class="img-cont">
+                        <img src="{{ block.settings[logvar] }}" alt="">
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+                </div>
+
+                <div class="flex-text">
+                {% for i in (0..5)  %}
+                  {% assign textvar = "text" | append: i  %}
+                  {% if block.settings[textvar] != blank %}
+                    <div class="cont-text">
+                      <div class="logo-text">{{ block.settings[textvar] }}</div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
 
           <div class="meta">
             {% if section.settings.display_social_buttons %}
@@ -254,9 +280,26 @@
   "class": "product-template",
   "settings": [
     {
+      "type": "text",
+      "id": "why_sub",
+      "label": "Pourquoi s'abonner",
+      "default": "Pourquoi s'abonner ?"
+    },
+    {
+      "type": "url",
+      "id": "why_sub_page",
+      "label": "Pourquoi s'abonner content (Must be a PAGE)"
+    },
+    {
       "type": "checkbox",
       "id": "product_breadcrumb",
       "label": "Show breadcrumb links"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_sidebar",
+      "label": "Display side bar (config down)",
+      "default": false
     },
     {
       "type": "checkbox",
@@ -511,6 +554,75 @@
     }
   ],
   "blocks": [
+    {
+      "type": "swatch",
+      "name": "Swatch",
+      "settings": [
+        {
+          "type": "color",
+          "id": "hexa",
+          "label": "color"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "associated product"
+        }
+      ]
+    },
+    {
+      "type": "reassurance",
+      "name": "reassurance",
+      "settings": [
+        {
+          "type": "text",
+          "id": "logo1",
+          "label": "Réassurance logo 1"
+        },{
+          "type": "text",
+          "id": "text1",
+          "label": "Réassurance text 1"
+        },
+        {
+          "type": "text",
+          "id": "logo2",
+          "label": "Réassurance logo 2"
+        },{
+          "type": "text",
+          "id": "text2",
+          "label": "Réassurance text 2"
+        },
+        {
+          "type": "text",
+          "id": "logo3",
+          "label": "Réassurance logo 3"
+        },{
+          "type": "text",
+          "id": "text3",
+          "label": "Réassurance text 3"
+        },
+        {
+          "type": "text",
+          "id": "logo4",
+          "label": "Réassurance logo 4"
+        },{
+          "type": "text",
+          "id": "text4",
+          "label": "Réassurance text 4"
+        },
+        {
+          "type": "text",
+          "id": "logo5",
+          "label": "Réassurance logo 5"
+        },{
+          "type": "text",
+          "id": "text5",
+          "label": "Réassurance text 5"
+        }
+      ]
+
+
+    },
     {
       "type": "filter_by_collection",
       "name": "Collection list",

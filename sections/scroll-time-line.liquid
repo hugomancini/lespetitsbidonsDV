@@ -5,155 +5,119 @@
 {% endcomment %}
 
 {% comment %}{{ 'aos.css' | asset_url | stylesheet_tag }}{% endcomment %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.0/TweenMax.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/debug.addIndicators.min.js"></script>
-{% if section.settings.frontpage_grid_style == false %}
-  <div class="container">
-    <div class="sixteen columns" style="position: relative;">
-{% endif %}
-<div class="iphone">
-    <p class="screen screenHat"><img src="img/img_scrollMagic.png" /></p>
-    <p class="screen screenA">A</p>
-    <p class="screen screenB">B</p>
-    <p class="screen screenC">C</p>
+<div class="scroll-magic">
+
+
+<section
+    data-no-instant="true"
+    class="animation desktop"
+    data-scene-length="{{ section.blocks | size }}"
+    data-scene-duration="{{ section.settings.duration }}">
+
+  {% if section.blocks.size > 0 %}
+    <div class="logo-line">
+      {% for block in section.blocks %}
+        <div class="step{{ forloop.index }} step">
+          {% if block.settings.logo != blank %}
+            <p class="logo-label">{{ block.settings.logo_title }}</p>
+            <div>
+              <img id="logo-active{{forloop.index}}" class="logo-active" src="{{ block.settings.logo_active }}" alt="{{ block.settings.logo_title }}">
+              <img class="logo-item" src="{{ block.settings.logo }}" alt="{{ block.settings.logo_title }}">
+            </div>
+            <div class="after"></div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    {% for block in section.blocks %}
+
+       <div id="high{{forloop.index}}" data-index="{{forloop.index}}" class="animated">
+          <div id="biglogo{{forloop.index}}" class="big-logo">
+            {% if block.settings.logo != blank %}
+              <img src="{{ block.settings.logo }}" alt="{{ block.settings.logo_title }}">
+            {% endif %}
+          </div>
+          <div class="left">
+            {% if block.settings.image != blank %}
+              {% include 'image-element', image: block.settings.image, alt: block.settings.image.alt %}
+            {% endif %}
+          </div>
+          <div id="right{{forloop.index}}" class="right">
+            {% if block.settings.title != blank %}
+              <h3 class="headline">{{ block.settings.title }}</h3>
+            {% endif %}
+            {% if block.settings.subtitle != blank %}
+              <h4 class="subtitle">{{ block.settings.subtitle}}</h4>
+            {% endif %}
+            {% if block.settings.content != blank %}
+              <div id="content{{forloop.index}}" class="content">{{block.settings.content}}</div>
+            {% endif %}
+
+            {% if block.settings.button_label != blank %}
+              <a href="{{block.settings.button_url}}" class="action_button highlight-false">{{block.settings.button_label}}</a> <br>
+            {% endif %}
+
+            {% if block.settings.link_label != blank %}
+              <a href="{{block.settings.link_url}}" class="subbutton2">{{block.settings.link_label}}</a>
+            {% endif %}
+
+          </div>
+       </div>
+    {% endfor %}
+  {% endif%}
+</section>
+
+<section class="mobile">
+  {% if section.blocks.size > 0 %}
+    <div class="logos-mob">
+      {% for block in section.blocks %}
+        <div class="logo{{ forloop.index }} logo-mob" data-join="art{{ forloop.index }}">
+          {% if block.settings.logo != blank %}
+
+          <img class="logo-mob-img" src="{{ block.settings.logo }}" alt="{{ block.settings.logo_title }}">
+          <img class="logo-mob-active" src="{{ block.settings.logo_active }}" alt="{{ block.settings.logo_title }}">
+
+          <p class="logo-mob-label">{{ block.settings.logo_title }}</p>
+
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="content_for_logo">
+      {% for block in section.blocks %}
+        <div id="art{{ forloop.index }}" class="content_text">
+
+          {% if block.settings.title != blank %}
+            <h3 class="headline">{{ block.settings.title }}</h3>
+          {% endif %}
+
+          {% if block.settings.content != blank %}
+            <div id="content{{forloop.index}}" class="content">{{block.settings.content}}</div>
+            <span id="readMore">(...)</span>
+          {% endif %}
+
+          {% if block.settings.button_label != blank %}
+            <a href="{{block.settings.button_url}}" class="action_button highlight-false">{{block.settings.button_label}}</a> <br>
+          {% endif %}
+
+          {% if block.settings.link_label != blank %}
+            <a href="{{block.settings.link_url}}" class="subbutton2">{{block.settings.link_label}}</a>
+          {% endif %}
+
+          </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
 </div>
 
-<div  id="one" class="scroll_section">
-    <div class="inner innerS1">
-        <h1>Simple ScrollMagic Tutorial</h1>
-        <p>Learn how to create a <strong>simple scrolling website</strong> using ScrollMagic</p>
-    </div>
-</div>
-<div  id="two" class="scroll_section">
-    <div class="innerText innerS2">
-        <h2>Why to learn ScrollMagic?</h2>
-        <ul class="features">
-            <li>It's great for <strong>story telling websites</strong></li>
-            <li>It gives you <strong>endless creative power</strong></li>
-            <li>It's <strong>easy to use</strong> once you get it</li>
-        </ul>
-    </div>
-</div>
-<div  id="three" class="scroll_section">
-    <div class="innerText innerS3">
-        <h2>When to use ScrollMagic?</h2>
-        <ul class="features">
-            <li>When building <strong>interactive infographics</strong></li>
-            <li>When introducing your <strong>product or service</strong></li>
-            <li>When sharing your <strong>unique story or timeline</strong></li>
-        </ul>
-    </div>
-</div>
-<div  id="four" class="scroll_section">
-    <div class="innerText innerS4">
-        <h2>Want to learn more?</h2>
-    </div>
 
-</div>
 
-<style>
-  .scroll-timline-section {
-    position: relative;
-  }
-  .scroll_section {
-    /*position: absolute;*/
-    margin-left: 50%
-  }
-  .iphone {
-    width: 290px;
-    height: 80vh;
-    border-radius: 10px;
-    position: sticky;
-    top: 10px;
 
-    background-color: #3757D0;
-    background-image: -webkit-radial-gradient(#81bcff, #5d7fce);
-    background-image: radial-gradient(#81bcff, #5d7fce);
-  }
-</style>
-{% if section.settings.frontpage_grid_style == false %}
-    </div>
-  </div>
-{% endif %}
 
-<style>
 
-  {% for block in section.blocks %}
-    .block--{{ block.id }} {
-      background-color: {{ block.settings.bg_color }};
-    }
 
-    .block--{{ block.id }} .collection_title,
-    .block--{{ block.id }} p {
-      color: {{ block.settings.text_color }};
-    }
-
-    .block--{{ block.id }} a.button {
-      color: {{ block.settings.text_color }};
-      border-color: {{ block.settings.text_color }};
-    }
-  {% endfor %}
-
-  {% if section.settings.frontpage_grid_style == false and section.settings.featured_links_per_row == '1' %}
-      #shopify-section-{{ section.id }} .featured-link--section {
-        margin-bottom: 3%;
-      }
-      @media only screen and (max-width: 480px) {
-        #shopify-section-{{ section.id }} .featured-link--section {
-          margin-bottom: 10%;
-        }
-      }
-
-      #shopify-section-{{ section.id }} .featured-link--half {
-        width: 45%;
-      }
-      #shopify-section-{{ section.id }} .featured-link--margin {
-        {% if section.settings.frontpage_image_position == 'right' %}
-          margin-left: 3%;
-        {% else %}
-          margin-left: 0;
-          margin-right: 3%;
-        {% endif %}
-      }
-      #shopify-section-{{ section.id }} .featured-link--section:nth-child(even) .featured-link--margin {
-
-          margin-left: 0;
-          margin-right: 3%;
-
-      }
-
-    {% elsif section.settings.frontpage_grid_style == false and section.settings.featured_links_per_row == '2' %}
-
-        @media only screen and (max-width: 480px) {
-          #shopify-section-{{ section.id }} .featured-link--section {
-            margin-bottom: 10%;
-          }
-        }
-
-        #shopify-section-{{ section.id }} .featured-link--margin {
-          margin-right: 0;
-          margin-left: 0;
-        }
-
-        #shopify-section-{{ section.id }} .featured-link--section:nth-child(even) .featured-link--margin {
-          margin-left: 0;
-          margin-right: 0;
-        }
-
-      {% endif %}
-
-      .line {
-        height: 2px;
-        width:2px;
-        background: green;
-        max-height: 600px;
-      }
-
-</style>
-
-{% comment %}<script src="{{ 'aos.js' | asset_url }}"></script>{% endcomment %}
 
 
 {% schema %}
@@ -163,93 +127,39 @@
   "max_blocks": 5,
   "settings": [
     {
-      "type": "select",
-      "id": "time_line_position",
-      "label": "Time line position",
-      "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
-      ]
-    },
+      "type": "range",
+      "id": "duration",
+      "label": "Duration",
+      "info": "How long to scroll to get next div",
+      "min": 500,
+      "max": 5000,
+      "default": 1000,
+      "step": 500,
+      "unit": "px"
 
-
-    {
-      "type": "select",
-      "id": "frontpage_text_align",
-      "label": "Text alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "frontpage_image_position",
-      "label": "Image position",
-      "info": "Subsequent images will appear staggered",
-      "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
-      ]
-    },
-
-
-
-
-
-    {
-      "type": "checkbox",
-      "id": "frontpage_grid_style",
-      "label": "Wide display"
-    },
-    {
-      "type": "select",
-      "id": "featured_links_per_row",
-      "label": "Images per row",
-      "options": [
-        {
-          "value": "1",
-          "label": "1"
-        },
-        {
-          "value": "2",
-          "label": "2"
-        }
-      ]
     }
-
-
-
-
-
   ],
   "blocks": [
     {
-      "type": "image",
-      "name": "Steps",
+      "type": "Scene",
+      "name": "Scene",
       "settings": [
+        {
+          "type": "text",
+          "id": "logo",
+          "label": "Logo (SVG)"
+        },
+        {
+          "type": "text",
+          "id": "logo_active",
+          "label": "Logo (SVG)",
+          "info": "Different logo when active"
+        },
+        {
+          "type": "text",
+          "id": "logo_title",
+          "label": "Logo Label"
+        },
         {
           "type": "image_picker",
           "id": "image",
@@ -258,70 +168,40 @@
         },
         {
           "type": "text",
-          "id": "step_logo",
-          "label": "Logo (SVG)"
-        },
-        {
-          "type": "select",
-          "id": "image_crop",
-          "label": "Image cropping",
-          "default": "none",
-          "info": "Only applied when text area is taller than image.",
-          "options": [
-            {
-              "value": "left",
-              "label": "Left"
-            },
-            {
-              "value": "right",
-              "label": "Right"
-            },
-            {
-              "value": "center",
-              "label": "Center"
-            },
-            {
-              "value": "none",
-              "label": "None"
-            }
-          ]
+          "id": "title",
+          "label": "Title"
         },
         {
           "type": "text",
-          "id": "title",
-          "label": "Heading",
-          "default": "Your headline"
+          "id": "subtitle",
+          "label": "Sub Title"
         },
         {
           "type": "richtext",
-          "id": "text",
-          "label": "Text",
-          "default": "<p>Promotion description appears here.</p>"
+          "id": "content",
+          "label": "Content"
         },
         {
           "type": "text",
           "id": "button_label",
           "label": "Button label",
-          "default": "View all"
+          "default": "Découvrir les engagements"
         },
         {
           "type": "url",
-          "id": "link",
-          "label": "Button link"
+          "id": "button_url",
+          "label": "Button url"
         },
         {
-          "type": "header",
-          "content": "Colors"
+          "type": "text",
+          "id": "link_label",
+          "label": "Link label",
+          "default": "Découvrir les engagements"
         },
         {
-          "type": "color",
-          "id": "bg_color",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
+          "type": "url",
+          "id": "link_url",
+          "label": "Link url"
         }
       ]
     }
@@ -330,16 +210,9 @@
     "name": "Scroll Time Line",
     "category": "Image",
     "settings": {
-      "featured_links_per_row": "1",
-      "frontpage_text_align": "left"
     },
     "blocks": [
-      {
-        "type": "image"
-      },
-      {
-        "type": "image"
-      }
+
     ]
   }]
 }

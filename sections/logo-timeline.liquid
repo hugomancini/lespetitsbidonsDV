@@ -1,0 +1,215 @@
+{% comment %}
+** TimeLine - homepage partial **
+- Draggable section
+{% endcomment %}
+
+{% comment %}modify style.scss, vendor.js & app.js {% endcomment %}
+{% comment %}search for // TIMELINE{% endcomment %}
+
+{% if section.blocks.size > 0 %}
+        {% if section.settings.title != blank %}
+        <div class="general-container">
+
+
+          <h3 class="title">{{section.settings.title}}</h3>
+        {% endif %}
+        <div id="homepage_timeline-{{section.id}}"
+        class="mainslider homepage-timeline"
+        data-slider-id="homepage_timeline-{{section.id}}"
+        data-slideshow-speed="{{section.settings.slideshow_speed}}"
+        data-slideshow-text-animation="{{section.settings.slideshow_text_animation}}"
+        data-slideshow-animation="{{ section.settings.slideshow_animation }}"
+        data-adaptive-height="{{section.settings.activate_adaptiveHeight}}"
+        data-slides-length="{{ section.blocks | size }}"
+
+        >
+
+
+
+        {% for block in section.blocks %}
+          <div class='slide' id="slide-{{ forloop.index }}">
+            <div class='buble'>
+              <h4>{{block.settings.title}}</h4>
+              <p>{{block.settings.content}}</p>
+              {% if block.settings.button1_link != blank %}
+                <a href="{{block.settings.button1_link}}" class="button">{{block.settings.button1}}</a>
+              {% endif %}
+              <div class="date">{{block.settings.date}}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+
+        <ul id="progressbar" class="navforslider ">
+          {% for block in section.blocks %}
+            <li>
+            <img src="{{block.settings.svg}}" class="lazyload" alt="">
+            </li>
+          {% endfor%}
+        </ul>
+<style>
+
+  .timeline #progressbar li,
+  .timeline #progressbar-text li {
+     width: calc(100% / {{ section.blocks | size }} );
+  }
+  @media screen and (max-width: 798px) {
+     #progressbar li img {
+       max-width: calc(100vw / {{ section.blocks | size | plus: 1 }});
+    }
+  }
+
+
+
+</style>
+</div>
+{% endif %}
+
+
+{% schema %}
+
+
+{
+  "name": "Timeline",
+  "class": "timeline",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Your headline"
+    },
+    {
+      "type": "checkbox",
+      "id": "wide_display",
+      "label": "Wide display",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "slideshow_text_animation",
+      "label": "Text animation",
+      "options": [
+        {
+          "value": "fadeIn",
+          "label": "Fade In"
+        },
+        {
+          "value": "fadeInUp",
+          "label": "Fade Up"
+        },
+        {
+          "value": "fadeInDown",
+          "label": "Fade Down"
+        },
+        {
+          "value": "",
+          "label": "None"
+        }
+      ],
+      "default": "fadeInDown"
+    },
+    {
+      "type": "select",
+      "id": "slideshow_animation",
+      "label": "Gallery transition",
+      "options": [
+        {
+          "value": "fade",
+          "label": "Fade"
+        },
+        {
+          "value": "slide",
+          "label": "Slide"
+        }
+      ],
+      "default": "slide"
+    },
+    {
+      "type": "range",
+      "id": "slideshow_speed",
+      "label": "Change slides every",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 6,
+      "unit": "sec"
+    },
+    {
+      "type": "checkbox",
+      "id": "activate_adaptiveHeight",
+      "label": "Enable adaptive height",
+      "info": "Slideshow will adjust based on height of individual slides"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "pretext",
+          "label": "Preheading"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Your headline"
+        },
+        {
+          "type": "text",
+          "id": "svg",
+          "label": "SVG"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "content"
+        },
+        {
+          "type": "richtext",
+          "id": "date",
+          "label": "date"
+        },
+        {
+          "type": "text",
+          "id": "button1",
+          "label": "First button label"
+        },
+        {
+          "type": "url",
+          "id": "button1_link",
+          "label": "First slide link"
+        }
+
+
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Timeline",
+    "category": "Text",
+    "settings": {
+    },
+    "blocks": [
+      {
+        "type": "image",
+        "settings": {
+          "title": "Turbo Shopify Theme"
+        }
+      },
+      {
+        "type": "image",
+          "settings": {
+          "title": ""
+        }
+      }
+    ]
+  }]
+}
+
+{% endschema %}
+

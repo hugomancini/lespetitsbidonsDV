@@ -3,6 +3,24 @@
   {% if settings.display_vendor %}
     <span class="brand">{{ product.vendor }}</span>
   {% endif %}
+  <div class="stars" style="text-align: left">
+    {% for index in (1..5) %}
+      <i class="fas fa-star green"></i>
+    {% endfor %}
+  </div>
+
+  {% assign found = false %}
+  {% for c in product.collections %}
+    {% if c.handle == "lessive-ecologique" %}
+      {% assign found = true %}
+    {% endif %}
+  {% endfor %}
+  <p style="text-align: left; min-height: 25px">
+    {% if found %}
+        1L = 25 lavages
+    {% endif %}
+  </p>
+
   {% if settings.enable_shopify_collection_badges %}
     <div class="shopify-reviews reviewsVisibility--{{settings.enable_shopify_review_comments}}">
       <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
@@ -12,7 +30,7 @@
     <span class="modal_price">{{ 'collections.general.coming_soon' | t }}</span>
   {% else %}
     <span class="price {% if product.compare_at_price_max > product.price %}sale{% endif %}">
-      <span class="current_price">
+{% comment %}      <span class="current_price">
         {% if product.available %}
           {% if product.price_varies and product.price_min > 0 %}
             <small><em>{{ 'products.general.from' | t }}</em></small>
@@ -25,13 +43,13 @@
         {% else %}
           <span class="sold_out">{{ 'products.product.sold_out' | t }}</span>
         {% endif %}
-      </span>
-        {% assign variant = product.selected_or_first_available_variant %}
+      </span>{% endcomment %}
+{% comment %}        {% assign variant = product.selected_or_first_available_variant %}
         <span class="was_price">
           {% if variant.price < variant.compare_at_price and variant.available %}
             <span class="money">{{ variant.compare_at_price | money }}</span>
           {% endif %}
-        </span>
+        </span>{% endcomment %}
     </span>
   {% endif %}
 </div>

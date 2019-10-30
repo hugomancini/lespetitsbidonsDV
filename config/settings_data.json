@@ -3981,7 +3981,7 @@
     }
   },
   "current": {
-    "performance": "ludicrous",
+    "performance": "sport",
     "image_loading_style": "blur-up",
     "custom_scripts": "",
     "logo_color": "#020f4c",
@@ -3989,8 +3989,8 @@
     "regular_color": "#2b2a2a",
     "banner_color": "#ffffff",
     "headline_color": "#454545",
-    "headline_footer_text_color": "#3b3b3b",
-    "sub_footer_text_color": "#8d8d8d",
+    "headline_footer_text_color": "#ffffff",
+    "sub_footer_text_color": "#ffffff",
     "sale_color": "#020f4c",
     "was_price_color": "#010315",
     "product_hover_text_color": "#5b5b5b",
@@ -4008,12 +4008,14 @@
     "link_hover_color": "#555d85",
     "sidebar_nav_color": "#020f4c",
     "sidebar_nav_color_hover": "#555d85",
-    "sub_footer_link_color": "#8d8d8d",
+    "sub_footer_link_color": "#fcfcfc",
     "sub_footer_link_color_hover": "#2b2a2a",
-    "btn_color": "#ebebeb",
-    "banner_button_color": "#ffffff",
-    "btn_hover_color": "#cdcdcd",
+    "btn_color": "#0fbeb2",
+    "btn_color_white": "#ffffff",
+    "btn_hover_color": "#3ecdc1",
+    "btn_white_hover_color": "#e6fffd",
     "btn_text_color": "#2b2a2a",
+    "banner_button_color": "#ffffff",
     "button_style": "square",
     "read_more_style": "link",
     "swatch_style": "square",
@@ -4033,7 +4035,7 @@
     "search_section_color": "#333333",
     "search_section_bg_color": "#d2d9df",
     "testimonial_color": "#333333",
-    "testimonial_bg_color": "#ffffff",
+    "testimonial_bg_color": "#e4f7f6",
     "featured_promotions_color": "#ffffff",
     "featured_promotions_color_hover": "#fff",
     "featured_promotions_background": "#43505a",
@@ -4099,7 +4101,7 @@
     "footer_logo_font_size": 22,
     "footer_heading_font_size": 14,
     "footer_font_size": 12,
-    "mega_menu_1": false,
+    "mega_menu_1": true,
     "mega_menu_2": false,
     "mega_menu_3": false,
     "mega_menu_4": false,
@@ -4108,16 +4110,18 @@
     "search_pagination_type": "infinite_scroll",
     "enable_autocomplete": true,
     "search_to_display": 5,
-    "thumbnail_hover_enabled": true,
+    "subscribe_text": "JE M'ABONNE",
+    "subscribe_link": "shopify:\/\/pages\/conditions-generales",
+    "thumbnail_hover_enabled": false,
     "display_vendor": false,
     "collection_secondary_image": false,
     "sale_banner_enabled": true,
     "collection_swatches": false,
-    "mobile_products_per_row": "2",
+    "mobile_products_per_row": "1",
     "pagination_type": "infinite_scroll",
-    "align_height": false,
+    "align_height": true,
     "collection_height": 200,
-    "notify_me_form": true,
+    "notify_me_form": false,
     "notify_me_richtext": "<p>Notify me when this product is available:<\/p>",
     "product_form_style": "swatches",
     "display_product_quantity": true,
@@ -4127,9 +4131,9 @@
     "free_price_text": "Free",
     "size_chart": "",
     "enable_shopify_review_comments": true,
-    "enable_shopify_collection_badges": false,
+    "enable_shopify_collection_badges": true,
     "quick_shop_enabled": true,
-    "quick_shop_style": "popup",
+    "quick_shop_style": "inline",
     "show_payment_button": false,
     "quick_shop_display_vendor": false,
     "quick_shop_display_savings": true,
@@ -4146,7 +4150,7 @@
     "show_lock_icon": true,
     "display_tos_checkbox": false,
     "tos_page": "",
-    "go_to_checkout": true,
+    "go_to_checkout": false,
     "display_special_instructions": false,
     "display_savings": false,
     "cart_message": "",
@@ -4157,7 +4161,7 @@
     "supported_currencies": "USD CAD AUD GBP EUR JPY",
     "default_currency": "USD",
     "mailchimp_link": "",
-    "secondary_newsletter_banner": true,
+    "secondary_newsletter_banner": false,
     "newsletter_popup": false,
     "newsletter_popup_close": true,
     "newsletter_popup_mobile": false,
@@ -4424,6 +4428,8 @@
           "promo_text": "",
           "logo_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/logo.svg?734",
           "new_cart_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/kewlcart.svg?882",
+          "cart_active": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/cart_active.svg?4332",
+          "hover_choice": "hvr-border-fade",
           "social_icons_header": false,
           "phone_number": "",
           "top_bar_menu": "",
@@ -4493,6 +4499,7 @@
       },
       "1489284503681": {
         "type": "image-text",
+        "disabled": true,
         "blocks": {
           "1489284503681-0": {
             "type": "image",
@@ -4501,7 +4508,8 @@
               "image_crop": "none",
               "title": "Nos engagements",
               "text": "<p>Chassez le naturel, il revient au galop !<\/p>\n<p>C&rsquo;est en s&rsquo;inspirant de la nature que nous formulons nos produits. Les lessives LES PETITS BIDONS contiennent 99,6% d&rsquo;ingr&eacute;dients naturels pour &ecirc;tre exact : un record de recherche et de d&eacute;veloppement pour m&ecirc;ler efficacit&eacute; et nature, atteint apr&egrave;s 8 mois d&rsquo;essais et pas moins de 30 recettes.Savon de Marseille, huiles v&eacute;g&eacute;tales, parfums naturels, nous avons s&eacute;lectionn&eacute; chaque composant pour leur naturalit&eacute;, leur efficacit&eacute; et leur innocuit&eacute; pour la peau et l&rsquo;environnement.<\/p>",
-              "button_label": "Découvrir nos engagements",
+              "button_label": "Découvrir les engagements",
+              "subbutton": "<p><a href=\"\/collections\/all\" title=\"All Products\">D&eacute;couvrir nos produits<\/a><\/p>",
               "link": "",
               "bg_color": "#ffffff",
               "text_color": ""
@@ -4521,14 +4529,15 @@
       "collection-template": {
         "type": "collection-template",
         "settings": {
+          "collection_title": "La petite boutique",
           "display_collection_title": false,
           "collection_breadcrumb": true,
-          "collection_tags": false,
+          "collection_tags": true,
           "collection_sort": false,
           "image": "",
           "featured_collection_image": false,
           "image_darken": false,
-          "products_per_row": 3,
+          "products_per_row": 4,
           "pagination_limit": 48,
           "toggle": false
         }
@@ -4715,10 +4724,12 @@
           "1489284011497-0": {
             "type": "image",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/LESPETITSBIDONS_OCTOBRE20191153-v3.jpg",
               "pretext": "",
-              "title": "Lessives efficaces et engagées",
+              "title": "Lessives efficaces <br> <b>et engagées<b><\/b><\/b>",
+              "bold": false,
               "subtitle": "",
+              "subbutton": "<p>Tous les 2 mois &bull; Sans engagement &bull; Parfums modifiables &agrave; chaque envoi<\/p>",
               "caption_background": false,
               "caption_background_transparency": false,
               "button1": "Je teste les petits bidons 12,99€",
@@ -4737,6 +4748,7 @@
         ],
         "settings": {
           "wide_display": true,
+          "overlay_mobile": true,
           "slideshow_text_animation": "fadeInDown",
           "slideshow_animation": "slide",
           "slideshow_speed": 6,
@@ -4749,62 +4761,89 @@
           "1571063917959-0": {
             "type": "image",
             "settings": {
-              "title": "Témoignages",
+              "title": "TITRE",
               "testimonial": "<p>Au d&eacute;but il faut s&rsquo;habituer au dosage mais apr&egrave;s c&rsquo;est hyper simple ! Les taches sont parties sur le linge tach&eacute; et on sent bien l&rsquo;odeur du parfum &agrave; l&rsquo;ouverture du tambour ! J&rsquo;en suis bien satisfaite !<\/p>",
-              "name": "Client 1",
+              "name": "Johana",
               "store_name": "",
               "link": "",
               "text_position": "center",
               "text_align": "center",
               "image": "",
-              "darken_bg": false
+              "darken_bg": false,
+              "stars": true,
+              "stars_nb": 5
             }
           },
           "1571063917959-1": {
             "type": "image",
             "settings": {
-              "title": "Customer Testimonial",
+              "title": "TITRE",
               "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
-              "name": "",
+              "name": "Julien",
               "store_name": "",
               "link": "",
               "text_position": "center",
               "text_align": "center",
               "image": "",
-              "darken_bg": false
+              "darken_bg": false,
+              "stars": true,
+              "stars_nb": 5
             }
           },
           "1571063917959-2": {
             "type": "image",
             "settings": {
-              "title": "Customer Testimonial",
+              "title": "TITRE",
               "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
-              "name": "",
+              "name": "Noémie",
               "store_name": "",
               "link": "",
               "text_position": "center",
               "text_align": "center",
               "image": "",
-              "darken_bg": false
+              "darken_bg": false,
+              "stars": true,
+              "stars_nb": 5
+            }
+          },
+          "1571668780426": {
+            "type": "image",
+            "settings": {
+              "title": "TITRE",
+              "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+              "name": "Jojo",
+              "store_name": "",
+              "link": "",
+              "text_position": "center",
+              "text_align": "center",
+              "image": "",
+              "darken_bg": false,
+              "stars": true,
+              "stars_nb": 5
             }
           }
         },
         "block_order": [
           "1571063917959-0",
           "1571063917959-1",
-          "1571063917959-2"
+          "1571063917959-2",
+          "1571668780426"
         ],
         "settings": {
-          "wide_display": false,
-          "testimonial_text_animation": "fadeInDown",
-          "testimonial_speed": 6
+          "wide_display": true,
+          "principal_title": "Avis Clients",
+          "button_label": "AVIS CLIENTS",
+          "testi_button_link": "",
+          "testimonial_speed": 0
         }
       },
       "1571064040930": {
         "type": "image-with-text-overlay",
         "settings": {
           "wide_display": true,
-          "image": "",
+          "show_on_mobile": false,
+          "overlay_on_mobile": false,
+          "image": "shopify:\/\/shop_images\/clothing-on-retail-rack.jpg",
           "pretext": "",
           "title": "Ensemble, lavons sans tout salir",
           "subtitle": "<p>Azurants optiques, EDTA, BHT, tensioactifs d&eacute;riv&eacute;s de p&eacute;trole, sulfates, huile de palme&hellip;. Des produits toujours plus chimiques, des ingr&eacute;dients de synth&egrave;se cach&eacute;s et toxiques, desformules fabriqu&eacute;s loin de chez nous, <br>un impact environnemental d&eacute;sastreux&hellip; <br>Alors chez Les Petits Bidons, on en a eu marre et on a voulu repartir de z&eacute;ro pour tenter de r&eacute;pondre &agrave; cette simple question&nbsp;:\u000bet si, plut&ocirc;t que de faire toujours plus, <br>on essayait de faire mieux&nbsp;?<\/p>",
@@ -4813,53 +4852,11 @@
           "button1": "",
           "button1_link": "",
           "button1_highlight": false,
-          "button2": "",
-          "button2_link": "",
+          "button2": "Découvrir les produits",
+          "button2_link": "shopify:\/\/collections\/all",
           "button2_highlight": false,
           "text_position": "left",
           "text_align": "left"
-        }
-      },
-      "1571064405470": {
-        "type": "logo-bar",
-        "blocks": {
-          "1571064405470-0": {
-            "type": "logo_image",
-            "settings": {
-              "image": "",
-              "link": ""
-            }
-          },
-          "1571064405470-1": {
-            "type": "logo_image",
-            "settings": {
-              "image": "",
-              "link": ""
-            }
-          },
-          "1571064405470-2": {
-            "type": "logo_image",
-            "settings": {
-              "image": "",
-              "link": ""
-            }
-          },
-          "1571064405470-3": {
-            "type": "logo_image",
-            "settings": {
-              "image": "",
-              "link": ""
-            }
-          }
-        },
-        "block_order": [
-          "1571064405470-0",
-          "1571064405470-1",
-          "1571064405470-2",
-          "1571064405470-3"
-        ],
-        "settings": {
-          "title": "Ils parlent de nous !"
         }
       },
       "1571064476931": {
@@ -4869,6 +4866,9 @@
             "type": "logo_image",
             "settings": {
               "image": "",
+              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/botthebox.svg?2560",
+              "svg_alt": "Livraison France métropolitaine",
+              "subtitle": "Livraison France métropolitaine",
               "link": ""
             }
           },
@@ -4876,6 +4876,9 @@
             "type": "logo_image",
             "settings": {
               "image": "",
+              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/lock_a035ea45-45f0-45ba-ac1e-a9d0baf87c47.svg?2573",
+              "svg_alt": "Paiement sécurisé",
+              "subtitle": "Paiement sécurisé",
               "link": ""
             }
           },
@@ -4883,6 +4886,9 @@
             "type": "logo_image",
             "settings": {
               "image": "",
+              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/ok.svg?2560S",
+              "svg_alt": "Service client",
+              "subtitle": "Service client",
               "link": ""
             }
           }
@@ -4893,101 +4899,569 @@
           "1571064476931-2"
         ],
         "settings": {
-          "title": "value proposition"
+          "title": ""
         }
       },
       "1571347915774": {
         "type": "scroll-time-line",
         "blocks": {
-          "1571347915774-0": {
-            "type": "image",
+          "1571758300765": {
+            "type": "Scene",
             "settings": {
-              "image": "",
-              "image_crop": "none",
-              "title": "Your headline",
-              "text": "<p>Promotion description appears here.<\/p>",
-              "button_label": "View all",
-              "link": "",
-              "bg_color": "",
-              "text_color": ""
+              "logo": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/feuille.svg?3054",
+              "logo_active": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/feuille_active.svg?4474",
+              "logo_title": "Formules naturelles",
+              "image": "shopify:\/\/shop_images\/imgwtext1.png",
+              "title": "Nos engagements",
+              "subtitle": "FORMULES NATURELLES",
+              "content": "<p>Chassez le naturel, il revient au galop !<br>C&rsquo;est en s&rsquo;inspirant de la nature que nous formulons nos produits. Les lessives LES PETITS BIDONS contiennent 99,6% d&rsquo;ingr&eacute;dients naturels pour &ecirc;tre exact : un record de recherche et de d&eacute;veloppement pour m&ecirc;ler efficacit&eacute; et nature, atteint apr&egrave;s 8 mois d&rsquo;essais et pas moins de 30 recettes.<br>Savon de Marseille, huiles v&eacute;g&eacute;tales, parfums naturels, nous avons s&eacute;lectionn&eacute; chaque composant pour leur naturalit&eacute;, leur efficacit&eacute; et leur innocuit&eacute; pour la peau et l&rsquo;environnement.<\/p>\n<p><\/p>\n<p>Chassez le naturel, il revient au galop !<br>C&rsquo;est en s&rsquo;inspirant de la nature que nous formulons nos produits. Les lessives LES PETITS BIDONS contiennent 99,6% d&rsquo;ingr&eacute;dients naturels pour &ecirc;tre exact : un record de recherche et de d&eacute;veloppement pour m&ecirc;ler efficacit&eacute; et nature, atteint apr&egrave;s 8 mois d&rsquo;essais et pas moins de 30 recettes.<br>Savon de Marseille, huiles v&eacute;g&eacute;tales, parfums naturels, nous avons s&eacute;lectionn&eacute; chaque composant pour leur naturalit&eacute;, leur efficacit&eacute; et leur innocuit&eacute; pour la peau et l&rsquo;environnement.<\/p>\n<p>Chassez le naturel, il revient au galop !<br>C&rsquo;est en s&rsquo;inspirant de la nature que nous formulons nos produits. Les lessives LES PETITS BIDONS contiennent 99,6% d&rsquo;ingr&eacute;dients naturels pour &ecirc;tre exact : un record de recherche et de d&eacute;veloppement pour m&ecirc;ler efficacit&eacute; et nature, atteint apr&egrave;s 8 mois d&rsquo;essais et pas moins de 30 recettes.<br>Savon de Marseille, huiles v&eacute;g&eacute;tales, parfums naturels, nous avons s&eacute;lectionn&eacute; chaque composant pour leur naturalit&eacute;, leur efficacit&eacute; et leur innocuit&eacute; pour la peau et l&rsquo;environnement.<\/p>\n<p><\/p>\n<p>Chassez le naturel, il revient au galop !<br>C&rsquo;est en s&rsquo;inspirant de la nature que nous formulons nos produits. Les lessives LES PETITS BIDONS contiennent 99,6% d&rsquo;ingr&eacute;dients naturels pour &ecirc;tre exact : un record de recherche et de d&eacute;veloppement pour m&ecirc;ler efficacit&eacute; et nature, atteint apr&egrave;s 8 mois d&rsquo;essais et pas moins de 30 recettes.<br>Savon de Marseille, huiles v&eacute;g&eacute;tales, parfums naturels, nous avons s&eacute;lectionn&eacute; chaque composant pour leur naturalit&eacute;, leur efficacit&eacute; et leur innocuit&eacute; pour la peau et l&rsquo;environnement.<\/p>",
+              "button_label": "Découvrir les engagements",
+              "button_url": "",
+              "link_label": "Découvrir les produits",
+              "link_url": ""
             }
           },
-          "1571347915774-1": {
-            "type": "image",
+          "1571758342271": {
+            "type": "Scene",
             "settings": {
-              "image": "",
-              "image_crop": "none",
-              "title": "Your headline",
-              "text": "<p>Promotion description appears here.<\/p>",
-              "button_label": "View all",
-              "link": "",
-              "bg_color": "",
-              "text_color": ""
+              "logo": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/goutte.svg?4552",
+              "logo_active": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/goutte_active.svg?4552",
+              "logo_title": "Respect de l’environnement",
+              "image": "shopify:\/\/shop_images\/imgwtext1.png",
+              "title": "C'est du propre !",
+              "subtitle": "RESPECT DE L'ENVIRONNEMENT",
+              "content": "<p>Chassez le naturel, il revient au galop !<br>C&rsquo;est en s&rsquo;inspirant de la nature que nous formulons nos produits. Les lessives LES PETITS BIDONS contiennent 99,6% d&rsquo;ingr&eacute;dients naturels pour &ecirc;tre exact : un record de recherche et de d&eacute;veloppement pour m&ecirc;ler efficacit&eacute; et nature, atteint apr&egrave;s 8 mois d&rsquo;essais et pas moins de 30 recettes.<br>Savon de Marseille, huiles v&eacute;g&eacute;tales, parfums naturels, nous avons s&eacute;lectionn&eacute; chaque composant pour leur naturalit&eacute;, leur efficacit&eacute; et leur innocuit&eacute; pour la peau et l&rsquo;environnement.<\/p>",
+              "button_label": "Découvrir les engagements",
+              "button_url": "",
+              "link_label": "Découvrir les engagements",
+              "link_url": ""
             }
           },
-          "1571348384536": {
-            "type": "image",
+          "1571758427784": {
+            "type": "Scene",
             "settings": {
-              "image": "",
-              "image_crop": "none",
-              "title": "Your headline",
-              "text": "<p>Promotion description appears here.<\/p>",
-              "button_label": "View all",
-              "link": "",
-              "bg_color": "",
-              "text_color": ""
+              "logo": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/france.svg?4552",
+              "logo_active": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/france_active.svg?4552",
+              "logo_title": "Fabriqué en France",
+              "image": "shopify:\/\/shop_images\/business-man-checks-mobile.jpg",
+              "title": "C'est pas très loin",
+              "subtitle": "FABRIQUÉ EN FRANCE",
+              "content": "<p>Fabriqu&eacute;<br>en France<\/p>",
+              "button_label": "Découvrir les engagements",
+              "button_url": "",
+              "link_label": "Découvrir les engagements",
+              "link_url": ""
             }
           },
-          "1571348390407": {
-            "type": "image",
+          "1572270883645": {
+            "type": "Scene",
             "settings": {
-              "image": "",
-              "image_crop": "none",
-              "title": "Your headline",
-              "text": "<p>Promotion description appears here.<\/p>",
-              "button_label": "View all",
-              "link": "",
-              "bg_color": "",
-              "text_color": ""
+              "logo": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/feuilles.svg?4552",
+              "logo_active": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/feuilles_active.svg?4552",
+              "logo_title": "4e section",
+              "image": "shopify:\/\/shop_images\/LESPETITSBIDONS_OCTOBRE20191153-v3.jpg",
+              "title": "4e section",
+              "subtitle": "Juste pour voir",
+              "content": "<p>lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem <strong>ipsumlorem ipsumlorem<\/strong> ipsum&nbsp;lorem ipsum<\/p>",
+              "button_label": "Découvrir les engagements",
+              "button_url": "",
+              "link_label": "Découvrir les engagements",
+              "link_url": ""
             }
           },
-          "1571348393768": {
-            "type": "image",
+          "1572286629631": {
+            "type": "Scene",
             "settings": {
-              "image": "",
-              "image_crop": "none",
-              "title": "Your headline",
-              "text": "<p>Promotion description appears here.<\/p>",
-              "button_label": "View all",
-              "link": "",
-              "bg_color": "",
-              "text_color": ""
+              "logo": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/MAINSURLECOEUR.svg?4559",
+              "logo_active": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/mainsurlecoeur_active.svg?4552",
+              "logo_title": "5e section",
+              "image": "shopify:\/\/shop_images\/sale-chalkboard.jpg",
+              "title": "5e section",
+              "subtitle": "A voir...",
+              "content": "<p>Lessive au top<\/p>",
+              "button_label": "Découvrir les engagements",
+              "button_url": "",
+              "link_label": "Découvrir les engagements",
+              "link_url": ""
             }
           }
         },
         "block_order": [
-          "1571347915774-0",
-          "1571347915774-1",
-          "1571348384536",
-          "1571348390407",
-          "1571348393768"
+          "1571758300765",
+          "1571758342271",
+          "1571758427784",
+          "1572270883645",
+          "1572286629631"
         ],
         "settings": {
-          "frontpage_text_align": "right",
-          "frontpage_image_position": "left",
-          "frontpage_grid_style": false,
-          "featured_links_per_row": "1"
+          "duration": 2500
+        }
+      },
+      "1571735598359": {
+        "type": "logo-timeline",
+        "blocks": {
+          "1571735598359-0": {
+            "type": "image",
+            "settings": {
+              "pretext": "",
+              "title": "",
+              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/BRUT.svg?2573",
+              "content": "<p>&laquo;<strong> Lorem ipsum<\/strong> dolor sit amet, consectetur adipisicing elit &raquo;<\/p>",
+              "date": "",
+              "button1": "",
+              "button1_link": ""
+            }
+          },
+          "1571735598359-1": {
+            "type": "image",
+            "settings": {
+              "pretext": "",
+              "title": "« Lorem ipsum dolor sit amet, consectetur adipisicing elit »",
+              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/Europe_1_noir.svg?2714",
+              "content": "",
+              "date": "",
+              "button1": "",
+              "button1_link": ""
+            }
+          },
+          "1571736125441": {
+            "type": "image",
+            "settings": {
+              "pretext": "",
+              "title": "« Lorem ipsum dolor sit amet, consectetur adipisicing elit »",
+              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/MUTANTS.svg?4559",
+              "content": "",
+              "date": "",
+              "button1": "",
+              "button1_link": ""
+            }
+          },
+          "1571736130514": {
+            "type": "image",
+            "settings": {
+              "pretext": "",
+              "title": "« Lorem ipsum dolor sit amet, consectetur adipisicing elit »",
+              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/trustsoc_noir.svg?2714",
+              "content": "",
+              "date": "",
+              "button1": "",
+              "button1_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1571735598359-0",
+          "1571735598359-1",
+          "1571736125441",
+          "1571736130514"
+        ],
+        "settings": {
+          "title": "Ils parlent de nous !",
+          "wide_display": true,
+          "slideshow_text_animation": "fadeInUp",
+          "slideshow_animation": "slide",
+          "slideshow_speed": 6,
+          "activate_adaptiveHeight": false
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "blocks": {
+          "1572364825349": {
+            "type": "reassurance",
+            "settings": {
+              "logo1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/reasslavage.svg?5277",
+              "text1": "1 bidon  = 25 lavages",
+              "logo2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/reassfeuill.svg?5277",
+              "text2": "0% huile  de palme",
+              "logo3": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/reassfroid.svg?5277",
+              "text3": "Efficace dès 30°",
+              "logo4": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/reass_coeur.svg?6127",
+              "text4": "Testé sur peaux sensibles",
+              "logo5": "https:\/\/cdn.shopify.com\/s\/files\/1\/0234\/8803\/6960\/files\/reassgoutte.svg?5277",
+              "text5": "Pas besoin  d’adoucissant"
+            }
+          },
+          "1572430988422": {
+            "type": "swatch",
+            "settings": {
+              "hexa": "#0fbeb2",
+              "product": "eucalyptus"
+            }
+          }
+        },
+        "block_order": [
+          "1572364825349",
+          "1572430988422"
+        ],
+        "settings": {
+          "why_sub": "Pourquoi s'abonner ?",
+          "why_sub_page": "shopify:\/\/pages\/pourquoi-sabonner",
+          "product_breadcrumb": false,
+          "display_sidebar": false,
+          "display_vendor": false,
+          "display_sku": false,
+          "display_savings": true,
+          "display_collections": false,
+          "display_type": false,
+          "display_tags": false,
+          "display_social_buttons": false,
+          "product_description_position": "top",
+          "gallery_arrows": false,
+          "activate_zoom": false,
+          "enable_product_lightbox": false,
+          "activate_autoplay": false,
+          "slideshow_animation": "slide",
+          "product_images_position": "left",
+          "product_thumbs": true,
+          "thumbnail_position": "left-thumbnails",
+          "enable_shopify_product_badges": false,
+          "review_position": "next_to_gallery",
+          "show_payment_button": false,
+          "display_recently_viewed": false,
+          "rv_title": "Recently Viewed Items",
+          "rv_products_style": "grid",
+          "rv_max_display": 4,
+          "rv_per": 4,
+          "toggle": false
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": false,
+          "product_recommendations_style": "grid",
+          "product_recommendations_heading": "hoho",
+          "products_per_row": 3,
+          "recommended_products_limit": 4
+        }
+      },
+      "mega-menu-1": {
+        "type": "mega-menu-1",
+        "blocks": {
+          "mega-menu-1-0": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_top": "shopify:\/\/shop_images\/LESPETITSBIDONS_OCTOBRE20191153-v3.jpg",
+              "image_caption_top": "SHOP ALL",
+              "image_link_top": "shopify:\/\/collections\/all",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_bottom": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "mega-menu-1-1": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_top": "shopify:\/\/shop_images\/LESPETITSBIDONS_OCTOBRE20191153-v3.jpg",
+              "image_caption_top": "LESSIVES",
+              "image_link_top": "shopify:\/\/collections\/lessive-ecologique",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_bottom": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "mega-menu-1-2": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_bottom": "shopify:\/\/shop_images\/LESPETITSBIDONS_OCTOBRE20191153-v3.jpg",
+              "image_caption_bottom": "DÉTACHANTS",
+              "image_link_bottom": "shopify:\/\/collections\/detachants",
+              "richtext_bottom": ""
+            }
+          },
+          "mega-menu-1-3": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_top": "shopify:\/\/shop_images\/LESPETITSBIDONS_OCTOBRE20191153-v3.jpg",
+              "image_caption_top": "ACCESSOIRES",
+              "image_link_top": "shopify:\/\/collections\/accessoires",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_bottom": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          }
+        },
+        "block_order": [
+          "mega-menu-1-0",
+          "mega-menu-1-1",
+          "mega-menu-1-2",
+          "mega-menu-1-3"
+        ],
+        "settings": {
+          "parent": "PRODUITS"
+        }
+      },
+      "search-template": {
+        "type": "search-template",
+        "settings": {
+          "image": "",
+          "image_darken": false,
+          "search_breadcrumb": true,
+          "search_term": "Search...",
+          "products_per_row": 3,
+          "pagination_limit": 48,
+          "blog_author": false,
+          "read_more_link": true,
+          "blog_date": true,
+          "toggle": false
+        }
+      },
+      "page-faq-template": {
+        "type": "page-faq-template",
+        "blocks": {
+          "page-faq-template-0": {
+            "type": "heading",
+            "settings": {
+              "heading": "LES INFOS SUR NOS PRODUITS !"
+            }
+          },
+          "page-faq-template-1": {
+            "type": "Content",
+            "settings": {
+              "title": "T’AS QUOI DANS LE BIDON ? (y’a quoi dans la formule ?)",
+              "subtitle": "<p>On vous dit tout&nbsp;! Dans Les Petits Bidons il y a&nbsp;du Savon de Marseille &agrave; l&rsquo;Huile d&rsquo;Olive cuit au chaudron, des agents moussants et lavants &agrave; base d&rsquo;huile de tournesol et de ricin, des enzymes pour renforcer l&rsquo;efficacit&eacute;, de l&rsquo;eau, un solvant issu d&rsquo;huiles v&eacute;g&eacute;tales (et toujours 0% d&rsquo;huile de palme !), un alcool d&rsquo;origine naturelle, de l&rsquo;acide citrique, de la potasse, de la glyc&eacute;rine, du sel et un parfum d&rsquo;origine naturelle &agrave; base d&rsquo;huiles essentielles pour les versions parfum&eacute;es&nbsp;!<\/p>\n<p>Et toujours Sans Huile de Palme, sans colorants, sans azurants optiques, sans tensioactifs d&eacute;riv&eacute;s du p&eacute;trole&nbsp;!<\/p>"
+            }
+          },
+          "page-faq-template-2": {
+            "type": "Content",
+            "settings": {
+              "title": "POURQUOI 99% ET PAS 100% NATURELLES ?",
+              "subtitle": "<p>Notre volont&eacute; c&rsquo;est de proposer le maximum d&rsquo;ingr&eacute;dients d&rsquo;origine naturelle. Dans nos lessives, nous avons 99,6% d&rsquo;ingr&eacute;dients d&rsquo;origine naturelle. Les 0,4% restant correspondent &agrave; des enzymes ajout&eacute;es pour renforcer l&rsquo;efficacit&eacute; de lavage mais qui permettent toujours &agrave; la formule d&rsquo;&ecirc;tre facilement biod&eacute;gradable et respectueuse de l&rsquo;environnement&nbsp;!<\/p>"
+            }
+          },
+          "page-faq-template-3": {
+            "type": "Content",
+            "settings": {
+              "title": "C’EST POUR TOUTES LES PEAUX ? MÊME SENSIBLES ?",
+              "subtitle": "<p>Toutes les formules des Petits Bidons ont &eacute;t&eacute; test&eacute;es sur peaux sensibles et sous contr&ocirc;le dermatologique. Nous avons apport&eacute; un soin tout particulier &agrave; cr&eacute;er une formule la plus propre possible pour l&rsquo;environnement mais aussi pour la peau. Si vous avez une peau particuli&egrave;rement sensible, on vous recommande la formule Sans Parfum qui a &eacute;t&eacute; travaill&eacute;e pour un maximum de tol&eacute;rance sans huile essentielle.<\/p>"
+            }
+          },
+          "page-faq-template-6": {
+            "type": "Content",
+            "settings": {
+              "title": "VOS BOUTEILLES SONT EN PLASTIQUE ?",
+              "subtitle": "<p>Les Petits Bidons sont en PET 100 % recyclable et d&egrave;s que nous serons un peu plus gros nous pourrons int&eacute;grer une grande partie de PET recycl&eacute; ! Nous sommes aujourd'hui malheureusement beaucoup trop petit pour pouvoir y pr&eacute;tendre... et puis en parall&egrave;le on r&eacute;fl&eacute;chit aussi &agrave; plein de nouvelles fa&ccedil;ons de faire encore mieux mais &ccedil;a on vous en parle rapidement !<\/p>"
+            }
+          },
+          "page-faq-template-5": {
+            "type": "Content",
+            "settings": {
+              "title": "POURQUOI LA LESSIVE EST-ELLE PLUS LIQUIDE ?",
+              "subtitle": "<p>Vous l&rsquo;avez s&ucirc;rement remarqu&eacute; la formule des PETITS BIDONS est plus liquide que votre lessive habituelle. C&rsquo;est parce que nous n&rsquo;avons pas ajout&eacute; d&rsquo;agent texturisant ou d&rsquo;huile de palme pour &eacute;paissir la formule mais elle est toujours tr&egrave;s concentr&eacute;e !&nbsp;<\/p>\n<p>On a juste mis le n&eacute;cessaire pour que ce soit efficace et bon pour l&rsquo;environnement&nbsp;!<\/p>"
+            }
+          },
+          "page-faq-template-4": {
+            "type": "heading",
+            "settings": {
+              "heading": "LES INFOS PRATIQUES POUR UTILISER NOS PRODUITS"
+            }
+          },
+          "page-faq-template-7": {
+            "type": "Content",
+            "settings": {
+              "title": "COMMENT DOSER LA LESSIVE ?",
+              "subtitle": "<p>Effectivement, nous n'avons pas de bouchon doseur&hellip; C'est un choix, &ccedil;a fait moins de plastique !<br>Pour vous aider on a fait un petit goulot et une graduation sur le c&ocirc;t&eacute;.<br>Et petite astuce : une dose moyenne, c'est effectivement de 40ml soit environ 1\/2 tasse &agrave; caf&eacute; ;)<\/p>"
+            }
+          },
+          "1572352072678": {
+            "type": "Content",
+            "settings": {
+              "title": "QUELLE EST LA TEMPERATURE IDEALE DE LAVAGE ET POUR QUELS TEXTILES ?",
+              "subtitle": "<p>Nos lessives ont &eacute;t&eacute; test&eacute;es en laboratoire ind&eacute;pendant, sur tous les types de taches et nous recommandons une utilisation &agrave; basse temp&eacute;rature (30&deg;C) pour des questions &eacute;cologiques et des r&eacute;sultats optimaux mais pas d'inqui&eacute;tude, nous avons aussi de bons r&eacute;sultats avec des temp&eacute;ratures plus basses pour des textiles plus d&eacute;licats.<\/p>\n<p>Notre lessive Les Petits Bidons convient &agrave; tous les textiles sous r&eacute;serve bien s&ucirc;r de suivre les instructions de lavage de vos v&ecirc;tements !<\/p>"
+            }
+          },
+          "1572352096181": {
+            "type": "Content",
+            "settings": {
+              "title": "LE VRAC, COMMENT CA MARCHE ?",
+              "subtitle": "<p>Dans nos locaux &agrave; Paris, nous proposons de r&eacute;cup&eacute;rer votre premier Petit Bidon dans un premier temps avec la possibilit&eacute; pour les prochaines fois de venir le remplir de nouveau.<\/p>\n<p>Pour b&eacute;n&eacute;ficier du vrac c&rsquo;est tr&egrave;s simple :<\/p>\n<p>1. Passer commande ( en unitaire ou en abonnement sur notre site&nbsp;<a href=\"http:\/\/www.lespetitsbidons.fr\/\">www.lespetitsbidons.fr<\/a>)<\/p>\n<p>2. Choisir la r&eacute;cup&eacute;ration dans nos bureaux (&Ccedil;a se passe tous les lundis et en plus, on pourra se rencontrer ! :) )<\/p>\n<p>&gt; OPTION 1 : c'est votre premi&egrave;re commande --&gt; on vous donnera votre premier Petit Bido<br>&gt; OPTION 2 : Si vous &ecirc;tes d&eacute;j&agrave; un adepte des Petits Bidons, vous revenez avec votre ancien Petit Bidon vide et HOP on vous le remplit ! (nous ne pouvons pour le moment re-remplir que des bouteilles &laquo;Les Petits Bidons &raquo; uniquement) C'est &agrave; petite &eacute;chelle mais c'est d&eacute;j&agrave; un d&eacute;but ! Alors... vous venez nous voir ?&nbsp;:)<\/p>"
+            }
+          },
+          "1572352150171": {
+            "type": "Content",
+            "settings": {
+              "title": "POURQUOI NE PROPOSEZ-VOUS PAS DE RECHARGES SOUPLES ?",
+              "subtitle": "<p>Le sujet de l'emballage est tr&egrave;s complexe et il n'y a pas de solution parfaite. L'id&eacute;e des recharges souples permet effectivement de r&eacute;duire la production de plastique mais ces recharges ne sont pas du tout recyclables, elles deviennent donc un d&eacute;chet non r&eacute;utilisable alors que nos Petits Bidons sont en PET 100% recyclable.<\/p>\n<p>D&egrave;s&nbsp;que l'on pourra le faire&nbsp;&agrave; partir de plastique recycl&eacute;, on vous tient bien s&ucirc;r au courant&nbsp;!<br>Et puis, on investigue plein d'autres pistes pour nos emballages..<\/p>\n<p>&nbsp;<\/p>"
+            }
+          },
+          "1572352241801": {
+            "type": "heading",
+            "settings": {
+              "heading": "LES ABONNEMENTS, COMMENT CA MARCHE ?"
+            }
+          },
+          "1572352249681": {
+            "type": "Content",
+            "settings": {
+              "title": "FONCTIONNEMENT GENERAL",
+              "subtitle": "<p>L&rsquo;abonnement &agrave; nos lessives Les Petits Bidons fonctionne tous les 2 mois, sans engagement et sans frais de r&eacute;siliation, c&rsquo;est tr&egrave;s flexible et simple d&rsquo;utilisation&nbsp;!<\/p>\n<p>Vous serez pr&eacute;lev&eacute; au moment de votre souscription puis les pr&eacute;l&egrave;vements pour le renouvellement d&rsquo;abonnement seront un mois sur deux, tous les 18 du mois. Puis, la livraison de votre commande en abonnement intervient le mois suivant votre pr&eacute;l&egrave;vement, tous les 1ers du mois (si ce n&rsquo;est pas un jour f&eacute;ri&eacute; ou weekend&nbsp;????)<\/p>"
+            }
+          },
+          "1572352276585": {
+            "type": "Content",
+            "settings": {
+              "title": "COMMENT SAVOIR SI MON COLIS EST EXPEDIE ?",
+              "subtitle": "<p>A la souscription de votre abonnement, vous recevrez par mail un r&eacute;capitulatif avec le(s) parfum(s) choisi(s), le nombre de Petits Bidons, le montant de votre formule et votre mode de livraison. Oui c&rsquo;est bien et ensuite&nbsp;?<\/p>\n<p>Au d&eacute;but du mois suivant, votre livraison sera exp&eacute;di&eacute;e (g&eacute;n&eacute;ralement le 1er&nbsp;ou le 2e&nbsp;du mois). Puis, vous serez pr&eacute;venu par mail ou sms en fonction de votre livraison choisie pour vous dire quand votre commande exp&eacute;di&eacute;e et vous pourrez suivre votre colis avec un num&eacute;ro de suivi Mondial Relay ou Colissimo.<\/p>"
+            }
+          },
+          "1572352288457": {
+            "type": "Content",
+            "settings": {
+              "title": "COMMENT MODIFIER, RESILIER OU METTRE EN PAUSE MON ABONNEMENT ?",
+              "subtitle": "<p>Tout changement, r&eacute;siliation ou pause de votre abonnement peut se faire n&rsquo;importe quand et gratuitement, &ccedil;a c&rsquo;est de la flexibilit&eacute;&nbsp;!<\/p>\n<p>Pour cela, il faut aller dans votre espace &laquo;&nbsp;Mes Abonnements&nbsp;&raquo; sur votre compte personnel Les Petits Bidons, vous pouvez en 2 clics modifier le nombre de bidons, le choix des parfums pour vos lessives.<\/p>\n<p>Le changement de formule n&rsquo;implique pas de coupure dans votre abonnement et vos livraisons se feront toujours un mois sur deux. Vous recevrez une confirmation par mail du changement.<\/p>\n<p>La mise en pause ou r&eacute;siliation de votre abonnement est tr&egrave;s simple et arr&ecirc;te automatiquement les prochaines &eacute;ch&eacute;ances. Attention, vous devez suspendre ou r&eacute;silier votre abonnement avant le 17 du mois de votre pr&eacute;l&egrave;vement pour ne pas provoquer le renouvellement automatique.<\/p>"
+            }
+          },
+          "1572352306773": {
+            "type": "Content",
+            "settings": {
+              "title": "POURQUOI LA LIVRAISON EST-ELLE TOUS LES DEUX MOIS ?",
+              "subtitle": "<p>En livrant nos Petits Bidons tous les 2 mois, nous souhaitons limiter les d&eacute;placements li&eacute;s &agrave; la livraison de nos lessives afin de diminuer notre impact sur la pollution et notre environnement.<\/p>\n<p>C&rsquo;est vrai que cela demande un peu de planification au d&eacute;part&nbsp;mais apr&egrave;s deux mois, vous pourrez adapter le nombre de bidons en fonction de vos besoins pour enfin ne plus manquer de lessive&nbsp;!<\/p>"
+            }
+          },
+          "1572352329870": {
+            "type": "heading",
+            "settings": {
+              "heading": "LIVRAISON ET SUIVI"
+            }
+          },
+          "1572352332780": {
+            "type": "Content",
+            "settings": {
+              "title": "COMMENT SONT CALCULES LES FRAIS DE PORT ?",
+              "subtitle": "<p><strong>&nbsp;<\/strong>On a essay&eacute; de trouver le meilleur rapport qualit&eacute; \/ prix pour vous satisfaire. Les produits sont lourds et nous prenons aussi une partie de ces frais &agrave; notre charge.<\/p>\n<p>Option 1&nbsp;:&nbsp; livraison &agrave; domicile via Colissimo, la plus ch&egrave;re mais sans contrainte pour vous&nbsp;!<\/p>\n<p>Option 2&nbsp;: Mondial Relay, le bon compromis entre le co&ucirc;t et la praticit&eacute;. Votre colis est d&eacute;pos&eacute; &agrave; deux pas de chez vous.<\/p>\n<p>Option 3&nbsp;: Uniquement pour les parisiens pour le moment, nous proposons sans frais suppl&eacute;mentaire de venir r&eacute;cup&eacute;rer votre commande tous les lundis dans nos bureaux au 27 rue du Chemin Vert &agrave; Paris (75011). &Ccedil;a nous permet de nous rencontrer et de papoter&nbsp;!<\/p>"
+            }
+          },
+          "1572352348973": {
+            "type": "Content",
+            "settings": {
+              "title": "QUELS SONT LES DELAIS DE LIVRAISON ?",
+              "subtitle": "<p>Notre r&eacute;ponse d&eacute;pend de votre moyen de livraison. G&eacute;n&eacute;ralement pour un colis avec&nbsp;:<\/p>\n<p>- Mondial Relay, il faut compter environ entre 4 et 6 jours ouvr&eacute;s.<\/p>\n<p>- Colissimo, les d&eacute;lais seront l&eacute;g&egrave;rement plus rapides, entre 2 et 4 jours ouvr&eacute;s.<\/p>\n<p>Enfin, si vous choisissez &laquo;&nbsp;R&eacute;cup&eacute;ration &agrave; Paris&nbsp;&raquo;, les cr&eacute;neaux pour venir chercher vos colis sont tous les lundis entre 17h et 20h. Nous vous envoyons un sms pour vous pr&eacute;venir de votre commande<\/p>"
+            }
+          },
+          "1572352370503": {
+            "type": "Content",
+            "settings": {
+              "title": "LIVREZ-VOUS A L’ETRANGER ?",
+              "subtitle": "<p>Cela nous fait toujours autant plaisir de savoir que nos Petits Bidons int&eacute;ressent des personnes au-del&agrave; de notre territoire.<\/p>\n<p>Malheureusement nous ne livrons pour le moment qu&rsquo;en France M&eacute;tropolitaine mais nous travaillons pour &eacute;largir cela rapidement. D&rsquo;ici l&agrave; n&rsquo;h&eacute;sitez pas &agrave; nous suivre sur les r&eacute;seaux sociaux, on annonce toujours les bonnes nouvelles sur ceux-ci&nbsp;!<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "page-faq-template-0",
+          "page-faq-template-1",
+          "page-faq-template-2",
+          "page-faq-template-3",
+          "page-faq-template-6",
+          "page-faq-template-5",
+          "page-faq-template-4",
+          "page-faq-template-7",
+          "1572352072678",
+          "1572352096181",
+          "1572352150171",
+          "1572352241801",
+          "1572352249681",
+          "1572352276585",
+          "1572352288457",
+          "1572352306773",
+          "1572352329870",
+          "1572352332780",
+          "1572352348973",
+          "1572352370503"
+        ],
+        "settings": {
+          "show_banner": true,
+          "image": "",
+          "pretext": "",
+          "title": "FAQ",
+          "subtitle": "<p><strong>On r&eacute;pond &agrave; toutes vos questions !<br>Si vous ne trouvez pas de r&eacute;ponse ici,&nbsp;n&rsquo;h&eacute;sitez pas &agrave; nous contacter :)<\/strong><\/p>",
+          "caption_background": false,
+          "caption_background_transparency": false,
+          "text_position": "center",
+          "text_align": "center",
+          "button1": "",
+          "button1_link": "",
+          "button1_highlight": false,
+          "button2": "",
+          "button2_link": "",
+          "button2_highlight": false
+        }
+      },
+      "page-details-template": {
+        "type": "page-details-template",
+        "blocks": {
+          "1572355877600": {
+            "type": "custom_html",
+            "settings": {
+              "custom_html": "<script src=\"https:\/\/www.powr.io\/powr.js?platform=shopify\"><\/script><div class=\"powr-map\" id=\"5eee7717_1572355501\"><\/div>"
+            }
+          }
+        },
+        "block_order": [
+          "1572355877600"
+        ],
+        "settings": {}
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "display_special_instructions": false,
+          "display_continue_shopping": false,
+          "display_savings": true,
+          "cart_message": ""
         }
       }
     },
     "content_for_index": [
       "1489284011497",
       "1489284503681",
+      "1571347915774",
       "1571064040930",
       "1571063917959",
-      "1571064405470",
-      "1571064476931",
-      "1571347915774"
+      "1571735598359",
+      "1571064476931"
     ]
   }
 }

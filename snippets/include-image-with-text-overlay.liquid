@@ -15,6 +15,8 @@
   {% assign button2 = block.settings.button2 %}
   {% assign button2_link = block.settings.button2_link %}
   {% assign button2_highlight = block.settings.button2_highlight %}
+  {% assign show_on_mobile = block.settings.show_on_mobile %}
+
 {% else %}
   {% assign id = section.id %}
   {% assign wide_display = section.settings.wide_display %}
@@ -32,6 +34,7 @@
   {% assign button2 = section.settings.button2 %}
   {% assign button2_link = section.settings.button2_link %}
   {% assign button2_highlight = section.settings.button2_highlight %}
+  {% assign show_on_mobile = section.settings.show_on_mobile %}
 {% endif %}
 
 {% if wide_display == false %}
@@ -40,11 +43,18 @@
 {% endif %}
 
 <section id="banner-{{id}}" class="banner full-width--{{ wide_display }}">
-  {% if image != nil %}
-    {% include 'image-element', image: image, alt: image.alt, stretch_width: true %}
-  {% else %}
-    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--banner' }}
-  {% endif %}
+
+
+    {% if image != nil %}
+      {% if show_on_mobile %}
+        {% render 'image-element', image: image, alt: image.alt, stretch_width: true %}
+      {% else %}
+        {% render 'image-element', image: image, alt: image.alt, stretch_width: true, class: 'desktop' %}
+      {% endif %}
+
+    {% else %}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--banner' }}
+    {% endif %}
   {% unless button1_link != blank and button2_link != blank %}
     {% if button1_link != blank and button1 == blank %}
       <a href="{{ button1_link }}" class="banner-full-link">
@@ -59,7 +69,7 @@
   {% endunless %}
   {% unless pretext == blank and title == blank and subtitle == blank and button1 == blank and button2 == blank %}
     <div class="position-{{ text_position }} caption js-caption">
-      <div class="caption-content caption-background-{{ caption_background }} caption-transparency-{{ caption_background_transparency }} align-{{ text_align }}">
+      <div class="caption-content caption-background-{{ caption_background }} caption-transparency-{{ caption_background_transparency }} align-{{ text_align }}{% if title contains 'salir' %} salir-block {% endif %}">
         {% if pretext != blank %}
           <div class="pretext">
             {{ pretext }}

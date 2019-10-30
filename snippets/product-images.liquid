@@ -129,7 +129,9 @@
         </div>
       {% endfor %}
   </div>
-  {% if section.settings.product_thumbs %}
+
+      {% if section.settings.product_thumbs %}
+
     {% if product.images.size > 1 and image_width != 'full' %}
       <div class="product_gallery_nav product_gallery_nav--{{ section.settings.thumbnail_position }} product-{{ product.id }}-gallery-nav">
 
@@ -156,4 +158,5 @@
       </div>
     {% endif %}
   {% endif %}
+
 </div>

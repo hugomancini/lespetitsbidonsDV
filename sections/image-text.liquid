@@ -37,6 +37,7 @@
                 <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} class="collection_title">
                   {{ block.settings.title }}
                 </a>
+                <p></p>
                 {% if block.settings.text != blank %}
                   <div class="description">{{ block.settings.text }}</div>
                 {% endif %}
@@ -45,6 +46,9 @@
                     {{ block.settings.button_label }}
                   </a>
                 {% endif %}
+                <div class="subbutton2 subtitle">
+                  {{ block.settings.subbutton }}
+                </div>
               </div>
             </div>
           </section>
@@ -241,6 +245,11 @@
           "id": "button_label",
           "label": "Button label",
           "default": "View all"
+        },
+          {
+          "type": "richtext",
+          "id": "subbutton",
+          "label": "Texte sous bouton"
         },
         {
           "type": "url",

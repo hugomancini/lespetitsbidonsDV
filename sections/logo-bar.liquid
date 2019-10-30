@@ -13,7 +13,7 @@
     {% endif %}
 
     {% if section.blocks.size > 0 %}
-      <div class="logo-bar">
+      <div class="logo-bar general-container">
         {% for block in section.blocks %}
           <div class="logo-bar__item" {{ block.shopify_attributes }}>
             {% if block.settings.link != blank %}
@@ -21,8 +21,13 @@
             {% endif %}
             {% if block.settings.image != blank %}
               {% include 'image-element', image: block.settings.image, alt: block.settings.image.alt %}
+            {% elsif block.settings.svg != blank %}
+              <img src="{{block.settings.svg}}" alt="{{block.settings.svg_alt}}">
             {% else %}
               {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+            {% if block.settings.subtitle != blank %}
+              <p class="subtitle">{{block.settings.subtitle}}</p>
             {% endif %}
             {% if block.settings.link != blank %}
               </a>
@@ -59,6 +64,21 @@
             "id": "image",
             "label": "Image",
             "info": "400 x 300px recommended"
+          },
+          {
+            "type": "text",
+            "id": "svg",
+            "label": "Svg_link"
+          },
+          {
+            "type": "text",
+            "id": "svg_alt",
+            "label": "alt text for svg"
+          },
+          {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle"
           },
           {
             "type": "url",

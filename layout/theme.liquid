@@ -30,6 +30,10 @@
     <!-- Stylesheets for Turbo 4.2.1 -->
     {{ 'styles.scss.css' | asset_url | stylesheet_tag }}
     {{ 'custom.scss.css' | asset_url | stylesheet_tag }}
+    {{ 'thomas.scss.css' | asset_url | stylesheet_tag }}
+    {{ 'hugo.scss.css' | asset_url | stylesheet_tag }}
+
+
 
     <script>
       window.lazySizesConfig = window.lazySizesConfig || {};
@@ -46,7 +50,17 @@
         /*! lazysizes - v4.1.5 */
         !function(a,b){var c=function(){b(a.lazySizes),a.removeEventListener("lazyunveilread",c,!0)};b=b.bind(null,a,a.document),"object"==typeof module&&module.exports?b(require("lazysizes")):a.lazySizes?c():a.addEventListener("lazyunveilread",c,!0)}(window,function(a,b,c){"use strict";if(a.addEventListener){var d=/\s+/g,e=/\s*\|\s+|\s+\|\s*/g,f=/^(.+?)(?:\s+\[\s*(.+?)\s*\])(?:\s+\[\s*(.+?)\s*\])?$/,g=/^\s*\(*\s*type\s*:\s*(.+?)\s*\)*\s*$/,h=/\(|\)|'/,i={contain:1,cover:1},j=function(a){var b=c.gW(a,a.parentNode);return(!a._lazysizesWidth||b>a._lazysizesWidth)&&(a._lazysizesWidth=b),a._lazysizesWidth},k=function(a){var b;return b=(getComputedStyle(a)||{getPropertyValue:function(){}}).getPropertyValue("background-size"),!i[b]&&i[a.style.backgroundSize]&&(b=a.style.backgroundSize),b},l=function(a,b){if(b){var c=b.match(g);c&&c[1]?a.setAttribute("type",c[1]):a.setAttribute("media",lazySizesConfig.customMedia[b]||b)}},m=function(a,c,g){var h=b.createElement("picture"),i=c.getAttribute(lazySizesConfig.sizesAttr),j=c.getAttribute("data-ratio"),k=c.getAttribute("data-optimumx");c._lazybgset&&c._lazybgset.parentNode==c&&c.removeChild(c._lazybgset),Object.defineProperty(g,"_lazybgset",{value:c,writable:!0}),Object.defineProperty(c,"_lazybgset",{value:h,writable:!0}),a=a.replace(d," ").split(e),h.style.display="none",g.className=lazySizesConfig.lazyClass,1!=a.length||i||(i="auto"),a.forEach(function(a){var c,d=b.createElement("source");i&&"auto"!=i&&d.setAttribute("sizes",i),(c=a.match(f))?(d.setAttribute(lazySizesConfig.srcsetAttr,c[1]),l(d,c[2]),l(d,c[3])):d.setAttribute(lazySizesConfig.srcsetAttr,a),h.appendChild(d)}),i&&(g.setAttribute(lazySizesConfig.sizesAttr,i),c.removeAttribute(lazySizesConfig.sizesAttr),c.removeAttribute("sizes")),k&&g.setAttribute("data-optimumx",k),j&&g.setAttribute("data-ratio",j),h.appendChild(g),c.appendChild(h)},n=function(a){if(a.target._lazybgset){var b=a.target,d=b._lazybgset,e=b.currentSrc||b.src;if(e){var f=c.fire(d,"bgsetproxy",{src:e,useSrc:h.test(e)?JSON.stringify(e):e});f.defaultPrevented||(d.style.backgroundImage="url("+f.detail.useSrc+")")}b._lazybgsetLoading&&(c.fire(d,"_lazyloaded",{},!1,!0),delete b._lazybgsetLoading)}};addEventListener("lazybeforeunveil",function(a){var d,e,f;!a.defaultPrevented&&(d=a.target.getAttribute("data-bgset"))&&(f=a.target,e=b.createElement("img"),e.alt="",e._lazybgsetLoading=!0,a.detail.firesLoad=!0,m(d,f,e),setTimeout(function(){c.loader.unveil(e),c.rAF(function(){c.fire(e,"_lazyloaded",{},!0,!0),e.complete&&n({target:e})})}))}),b.addEventListener("load",n,!0),a.addEventListener("lazybeforesizes",function(a){if(a.detail.instance==c&&a.target._lazybgset&&a.detail.dataAttr){var b=a.target._lazybgset,d=k(b);i[d]&&(a.target._lazysizesParentFit=d,c.rAF(function(){a.target.setAttribute("data-parent-fit",d),a.target._lazysizesParentFit&&delete a.target._lazysizesParentFit}))}},!0),b.documentElement.addEventListener("lazybeforesizes",function(a){!a.defaultPrevented&&a.target._lazybgset&&a.detail.instance==c&&(a.detail.width=j(a.target._lazybgset))})}});
     </script>
+    <script src="https://kit.fontawesome.com/d54889ca89.js" crossorigin="anonymous"></script>
 
+    {% if template == 'index' %}
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" integrity="sha256-2p2tRZlPowp3P/04Pw2rqVCSbhyV/IB7ZEVUglrDS/c=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/debug.addIndicators.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineLite.min.js" integrity="sha256-nuhNsfXzBFR6G1lKP8bK77dakkQDqdHcQ4OCFZvk6Qo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js" integrity="sha256-LBjlnpPrM6Aig8LDFc9PJctPHLGUc6RaUvnmXE4hV5Y=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/BezierPlugin.min.js" integrity="sha256-5jxCMRC1PYU02qJn+fj+DPuxcQZCh0DR8GRwi4iKoRc=" crossorigin="anonymous"></script>
+{% endif %}
     {% if page_description %}
       <meta name="description" content="{% if template contains 'search' %} {{ page_title }} - {{ shop.name }} {% else %}{{ page_description | escape }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags | escape }}.{% endif %}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}.{% endif %}{% endif %}" />
     {% endif %}
@@ -75,7 +89,19 @@
     {% include 'social-meta-info' %}
     {% if collection.previous_product %}<link rel="prev" href="{{ collection.previous_product }}">{% endif %}
     {% if collection.next_product %}<link rel="next" href="{{ collection.next_product }}">{% endif %}
+
+    <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+    <script src="{{ 'vendors.js' | asset_url }}"></script>
+    <script src="{{ 'sections.js' | asset_url }}"></script>
+    <script src="{{ 'utilities.js' | asset_url }}"></script>
+    <script src="{{ 'app.js' | asset_url }}"></script>
+    <script src="{{ 'custom.js' | asset_url }}" data-no-instant></script>
+    <script src="{{ 'thomas.js' | asset_url }}" data-no-instant></script>
+    <script src="{{ 'hugo.js' | asset_url }}" data-no-instant></script>
+
+
   </head>
+
 
   {% if template contains "index" %}
     {% assign feature_image = true %}
@@ -182,12 +208,6 @@
       {% endif %}
     {% endif %}
 
-    <script src="{{ 'jquery.min.js' | asset_url }}"></script>
-    <script src="{{ 'vendors.js' | asset_url }}"></script>
-    <script src="{{ 'sections.js' | asset_url }}"></script>
-    <script src="{{ 'utilities.js' | asset_url }}"></script>
-    <script src="{{ 'app.js' | asset_url }}"></script>
-    {{ "custom.js" | asset_url | script_tag }}
 
     {% if settings.show_multiple_currencies %}
       {% include 'currencies' %}
@@ -211,12 +231,13 @@
 
       if (!inIframe()){
         InstantClick.init();
-        InstantClick.on('change', function() {
+        InstantClick.on('change', function(e) {
 
           $('head script[src*="shopify"]').each(function() {
             var script = document.createElement('script');
             script.type = 'text/javascript';
             script.src = $(this).attr('src');
+
 
             $('body').append( script );
           });

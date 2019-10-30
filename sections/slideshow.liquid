@@ -12,7 +12,7 @@
 {% if section.blocks.size > 0 %}
   <section  id="homepage_slider-{{section.id}}"
         class="banner homepage-slideshow js-homepage-slideshow slideshow_animation--{{ section.settings.slideshow_animation }} {% if section.settings.slideshow_text_animation != '' %}text-animation--true{% else %}text-animation--false{% endif %} transparentBackground--{{settings.slideshow_button_style}}
-        full-width--{{ section.settings.wide_display }}"
+        full-width--{{ section.settings.wide_display }} {% if section.settings.overlay_mobile %}overlay_mobile{% endif %}"
         data-slider-id="homepage_slider-{{section.id}}"
         data-slideshow-speed="{{section.settings.slideshow_speed}}"
         data-slideshow-text-animation="{{section.settings.slideshow_text_animation}}"
@@ -49,7 +49,7 @@
                     </div>
                   {% endif %}
                   {% if forloop.first == true and block.settings.title != blank %}
-                    <h1 class="headline">
+                    <h1 class="headline {% unless block.settings.bold %} lighter {% endunless %}">
                       {{ block.settings.title }}
                     </h1>
                   {% elsif block.settings.title != blank %}
@@ -62,16 +62,27 @@
                       {{ block.settings.subtitle }}
                     </div>
                   {% endif %}
-                  {% if block.settings.button1 != blank %}
-                    <a {% if block.settings.button1_link != blank %}href="{{ block.settings.button1_link }}"{% endif %} class="action_button first_button white-button highlight-{{block.settings.button1_highlight}}">
-                      {{ block.settings.button1 }}
-                    </a>
-                  {% endif %}
-                  {% if block.settings.button2 != blank %}
-                    <a {% if block.settings.button2_link != blank %}href="{{ block.settings.button2_link }}"{% endif %} class="action_button second_button green-button highlight-{{block.settings.button2_highlight}}">
-                      {{ block.settings.button2 }}
-                    </a>
-                  {% endif %}
+
+                  <div class="buttons">
+                    <div class="buttons2">
+                    {% if block.settings.button1 != blank %}
+                      <a {% if block.settings.button1_link != blank %}href="{{ block.settings.button1_link }}"{% endif %} class="action_button first_button white-button highlight-{{block.settings.button1_highlight}}">
+                        {{ block.settings.button1 }}
+                      </a>
+                    {% endif %}
+                    {% if block.settings.button2 != blank %}
+                      <a {% if block.settings.button2_link != blank %}href="{{ block.settings.button2_link }}"{% endif %} class="action_button second_button green-button highlight-{{block.settings.button2_highlight}}">
+                        {{ block.settings.button2 }}
+                      </a>
+                    {% endif %}
+                    </div>
+
+                    {% if block.settings.subbutton != blank %}
+                      <div class="subbutton subtitle">
+                        {{ block.settings.subbutton }}
+                      </div>
+                    {% endif %}
+                  </div>
                 </div>
               </div>
           {% endunless %}
@@ -95,6 +106,12 @@
       "type": "checkbox",
       "id": "wide_display",
       "label": "Wide display",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "overlay_mobile",
+      "label": "overlay on mobile ?",
       "default": true
     },
     {
@@ -171,15 +188,26 @@
           "label": "Preheading"
         },
         {
-          "type": "text",
+          "type": "textarea",
           "id": "title",
           "label": "Heading",
           "default": "Your headline"
         },
         {
+          "type": "checkbox",
+          "id": "bold",
+          "label": "bold title",
+          "default": true
+        },
+        {
           "type": "richtext",
           "id": "subtitle",
           "label": "Subheading"
+        },
+          {
+          "type": "richtext",
+          "id": "subbutton",
+          "label": "Texte sous bouton"
         },
         {
           "type": "checkbox",
