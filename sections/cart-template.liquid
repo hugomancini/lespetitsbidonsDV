@@ -44,11 +44,11 @@
                 <a class="" href="{{ item.url }}" title="{{ item.title | escape }}" class="cart_page_image">
                 {% include 'image-element', image: item, alt: item.title, object_fit: settings.align_height, max_height: settings.collection_height %}
               </a>
-              <div class="product-quantity-box left mobile-cart-items">
+              <div class="product-quantity-box right mobile-cart-items mobile-only" id="">
                 <span class="plusmoins" style="width: 20%">
-                   <span data-func="minus" class="moins js-change-quantity ">-</span>
+                   <span data-func="minus" class="moins js-change-quantity  plusmoins-items">-</span>
                   <input type="number" min="0" size="2" class="quantity " name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" data-line-id="{{ forloop.index }}" {% if settings.limit_quantity and item.variant.inventory_management != blank and item.variant.inventory_quantity > 0 and item.variant.inventory_policy == "deny" %}max="{{ item.variant.inventory_quantity }}"{% endif %} />
-                   <span data-func="plus" class="plus js-change-quantity ">+</span>
+                   <span data-func="plus" class="plus js-change-quantity plusmoins-items ">+</span>
                 </span>
               </div>
               </div>
@@ -186,7 +186,7 @@
             {% endif %}
           </div>
 
-          <div class="payment">
+          <div class="payment desktop-cart-items">
             <p>
               <button type="submit" class="action_button add_to_cart" id="checkout" name="checkout">{% if settings.show_lock_icon %}<span class="icon-lock"></span>{% endif %}{{ 'cart.general.checkout' | t }}</button>
             </p>
@@ -207,11 +207,52 @@
               {% endif %}
             {% endif %}
           </div>
+
         </div>
       </div>
     </div>
   </form>
   </div>
+
+  <div class="payment mobile-only">
+    <p>
+      <button type="submit" class="action_button add_to_cart" id="checkout" name="checkout">{% if settings.show_lock_icon %}<span class="icon-lock"></span>{% endif %}{{ 'cart.general.checkout' | t }}</button>
+    </p>
+
+    {% if settings.show_payment_button %}
+      {% if content_for_additional_checkout_buttons %}
+        <div class="additional-checkout-buttons">
+          {{ content_for_additional_checkout_buttons }}
+        </div>
+      {% endif %}
+    {% endif %}
+
+    {% if cart.item_count > 0 %}
+      {% if section.settings.display_continue_shopping %}
+        <div class="featured-links">
+          <a href="{% if cart.items.first.product.collections != blank %}{{ cart.items.first.product.collections.last.url }}{% else %}/collections/all{% endif %}" class="secondary_button">{{ 'cart.general.continue_shopping_link_html' | t }}</a>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+
+  <div class="container main content">
+    <div class="mobile-cart-icons mobile-only">
+      <div class="mobile-cart-icon">
+        <img src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/botthebox.svg?6542" alt="">
+        <p>LIVRAISON FRANCE<br>MÉTROPOLITAINE</p>
+      </div>
+      <div class="mobile-cart-icon">
+        <img src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/lock.svg?6535" alt="">
+        <p>PAIEMENT SÉCURISÉ</p>
+      </div>
+      <div class="mobile-cart-icon">
+        <img src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/coolhand.svg?6542" alt="">
+        <p>SERVICE CLIENT</p>
+      </div>
+    </div>
+  </div>
+
 
   {% include 'cart-shipping-calculator' %}
 {% endif %}
