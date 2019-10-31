@@ -7,7 +7,7 @@
 
 <div class="section clearfix">
   <div class="sixteen columns">
-    <h6 id="cart-title">RÉCAP</h6>
+    <h6 id="cart-title">{{ section.settings.cart_title }}</h6>
     <div class="feature_divider"></div>
   </div>
 </div>
@@ -27,7 +27,7 @@
 
   <div class="offset-by-four eight columns alpha">
   <form action="/cart" method="post" id="cart_form">
-    <h6 id="cart-subtitle">{{ ‘cart.general.title’ | t }}</h6>
+    <h6 id="cart-subtitle">{{ 'cart.general.title' | t }}</h6>
     <div class="section clearfix">
       <div class="">
         {% assign total_saving = 0 %}
@@ -235,23 +235,7 @@
       {% endif %}
     {% endif %}
   </div>
-{% comment %}
-  <div class="container main content">
-    <div class="mobile-cart-icons mobile-only">
-      <div class="mobile-cart-icon">
-        <img src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/botthebox.svg?6542" alt="">
-        <p>LIVRAISON FRANCE<br>MÉTROPOLITAINE</p>
-      </div>
-      <div class="mobile-cart-icon">
-        <img src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/lock.svg?6535" alt="">
-        <p>PAIEMENT SÉCURISÉ</p>
-      </div>
-      <div class="mobile-cart-icon">
-        <img src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/coolhand.svg?6542" alt="">
-        <p>SERVICE CLIENT</p>
-      </div>
-    </div>
-  </div>{% endcomment %}
+
 
 
   {% include 'cart-shipping-calculator' %}
@@ -275,6 +259,11 @@
   "name": "Cart page",
   "class": "cart-section",
   "settings": [
+    {
+      "type": "richtext",
+      "id": "cart_title",
+      "label": "Titre du panier (RECAP)"
+    },
     {
       "type": "checkbox",
       "id": "display_special_instructions",
