@@ -27,7 +27,7 @@
 
   <div class="offset-by-four eight columns alpha">
   <form action="/cart" method="post" id="cart_form">
-    <h6 id="cart-subtitle">RÉCAP PANIER</h6>
+    <h6 id="cart-subtitle">{{ ‘cart.general.title’ | t }}</h6>
     <div class="section clearfix">
       <div class="">
         {% assign total_saving = 0 %}
@@ -130,7 +130,7 @@
                   {{ discount_application.title }} (-<span class="money">{{ discount_application.total_allocated_amount | money }}</span>)
                 </span>
               {% endfor %}
-              <span>{{ 'cart.general.discount' | t }}</span>
+              <span >{{ 'cart.general.discount' | t }}</span>
               </p>
 
             {% endif %}
@@ -148,7 +148,7 @@
 
 
             <div class="js-cart_subtotal" id="cart-soustotal">
-               <div id="divleft" ><span>Total</span></div>
+               <div id="divleft" ><span id="left">Total</span></div>
                <div id="soustotalsep"></div>
                <div id="divright" ><span id="right" class="money">{{ cart.total_price | money }}</span></div>
             </div>
@@ -216,7 +216,7 @@
 
   <div class="payment mobile-only">
     <p>
-      <button type="submit" class="action_button add_to_cart" id="checkout" name="checkout">{% if settings.show_lock_icon %}<span class="icon-lock"></span>{% endif %}{{ 'cart.general.checkout' | t }}</button>
+      <button type="submit" class="action_button add_to_cart" id="checkout" name="checkout">{% if settings.show_lock_icon %}{% endif %}{{ 'cart.general.checkout' | t }}</button>
     </p>
 
     {% if settings.show_payment_button %}
@@ -235,7 +235,7 @@
       {% endif %}
     {% endif %}
   </div>
-
+{% comment %}
   <div class="container main content">
     <div class="mobile-cart-icons mobile-only">
       <div class="mobile-cart-icon">
@@ -251,7 +251,7 @@
         <p>SERVICE CLIENT</p>
       </div>
     </div>
-  </div>
+  </div>{% endcomment %}
 
 
   {% include 'cart-shipping-calculator' %}

@@ -207,7 +207,32 @@
 {% comment %}FOOTER MOBILE
 {% endcomment %}
 
+
+<div class="icon-footer">
+
+    <div class="container main content">
+      <div class="mobile-cart-icons mobile-only">
+        <div class="mobile-cart-icon">
+          <img src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/botthebox.svg?6542" alt="">
+          <p>LIVRAISON FRANCE<br>MÉTROPOLITAINE</p>
+        </div>
+        <div class="mobile-cart-icon">
+          <img src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/lock.svg?6535" alt="">
+          <p>PAIEMENT SÉCURISÉ</p>
+        </div>
+        <div class="mobile-cart-icon">
+          <img src="https://cdn.shopify.com/s/files/1/0234/8803/6960/files/coolhand.svg?6542" alt="">
+          <p>SERVICE CLIENT</p>
+        </div>
+      </div>
+  </div>
+</div>
+
 <footer class="footer mobile">
+
+
+
+
   <div class="container footer-menu-wrap footer-container">
       {% for block in section.blocks reversed %}
         <div class="{% if forloop.length >= 5 %}one-fifth column{% elsif forloop.length == 4 %}one-third column footer-columns{% elsif forloop.length == 3 %}one-third column{% elsif forloop.length == 2 %}one-half column{% endif %} medium-down--one-whole footer-columns" {{ block.shopify_attributes }}>
