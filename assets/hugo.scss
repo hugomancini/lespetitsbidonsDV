@@ -60,21 +60,17 @@
       flex-grow: 1;
     }
 
-    .payment {
-    }
 
     span.plusmoins {
         padding: 8px 20px;
         border: solid 1px black;
         position:absolute;
-        bottom:0;
-        right:0;
         display: flex;
         justify-content: space-around;
         align-items: flex-start;
         background-color: white;
         cursor: pointer;
-        width: 70% !important;
+        width: 20% !important;
         font-family: 'gorditabold' !important;
         input {
           border: none;
@@ -96,13 +92,58 @@
     @media (min-width: 1024px) {
 
       .mobile-only{
-        display:none
+        display:none;
       }
+
+
+      #payp {
+          display: flex;
+          justify-content: center;
+          margin-top: 50px;
+
+          button {
+            width: 60%;
+          }
+      }
+
 
 
     }
 
      @media (max-width: 1024px) {
+
+      .desktop-only {
+        display: none;
+      }
+
+      span.plusmoins {
+          padding: 8px 20px;
+          border: solid 1px black;
+          position:absolute;
+          bottom:0;
+          right:0;
+          display: flex;
+          justify-content: space-around;
+          align-items: flex-start;
+          background-color: white;
+          cursor: pointer;
+          width: 70% !important;
+          font-family: 'gorditabold' !important;
+          input {
+            border: none;
+            text-align: center;
+            height: initial;
+            min-height: initial;
+            padding: 0 !important;
+            line-height: initial;
+            color: black;
+            font: inherit;
+            margin-bottom: initial;
+          }
+          .plusmoins-items {
+            margin-top: 2px;
+          }
+        }
 
       .desktop-cart-items {
         display:none;
